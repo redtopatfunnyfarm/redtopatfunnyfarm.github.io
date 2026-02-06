@@ -27,45 +27,72 @@
     </header>
 
     <main>
+      <img
+        class="floating-bee floating-bee--one"
+        src="assets/img/decor/bee-float-1.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="floating-bee floating-bee--two"
+        src="assets/img/decor/bee-float-2.png"
+        alt=""
+        aria-hidden="true"
+        onerror="this.onerror=null;this.src='assets/img/decor/bee-float-1.png';"
+      />
       <div class="container">
         <div class="content-stack">
-          <section class="content-panel">
-            <p class="lead-in">Local, small-batch honey from Funny Farm</p>
-            <h2>From my hives, my farm, and the forest — to you, with love.</h2>
-            <p>
-              Pure raw honey, farm-to-bottle hot sauces, wildcrafted creations,
-              and natural health &amp; beauty — made with love and intention.
-            </p>
-            <form
-              class="hero-form"
-              action="https://formsubmit.co/RedTopAtFunnyFarm@gmail.com"
-              method="POST"
-            >
-              <input
-                type="hidden"
-                name="_subject"
-                value="New Honey List Signup - Shop at Funny Farm"
-              />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <label for="honey-list-email">Get updates (no spam):</label>
-              <div class="hero-form__fields">
+          <section class="content-panel hero-panel">
+            <div class="hero-copy">
+              <p class="lead-in">Local, small-batch honey from Funny Farm</p>
+              <h2>From my hives, my farm, and the forest — to you, with love.</h2>
+              <p>
+                Pure raw honey, farm-to-bottle hot sauces, wildcrafted creations,
+                and natural health &amp; beauty — made with love and intention.
+              </p>
+              <form
+                class="hero-form"
+                action="https://formsubmit.co/RedTopAtFunnyFarm@gmail.com"
+                method="POST"
+              >
                 <input
-                  id="honey-list-email"
-                  name="email"
-                  type="email"
-                  placeholder="you@email.com"
-                  required
+                  type="hidden"
+                  name="_subject"
+                  value="New Honey List Signup - Shop at Funny Farm"
                 />
-                <button type="submit">Join the Honey List</button>
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <label for="honey-list-email">Get updates (no spam):</label>
+                <div class="hero-form__fields">
+                  <input
+                    id="honey-list-email"
+                    name="email"
+                    type="email"
+                    placeholder="you@email.com"
+                    required
+                  />
+                  <button type="submit">Join the Honey List</button>
+                </div>
+              </form>
+              <p class="hero-form__note">We'll only email when honey is ready.</p>
+              <div class="button-row">
+                <a class="button" href="shop.html">Shop All Products</a>
+                <a class="button" href="about.html">Meet the Maker</a>
               </div>
-            </form>
-            <p class="hero-form__note">We'll only email when honey is ready.</p>
-            <div class="button-row">
-              <a class="button" href="shop.html">Shop All Products</a>
-              <a class="button" href="about.html">Meet the Maker</a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <img
+                src="assets/img/decor/hero-glow-jar.png"
+                alt=""
+                aria-hidden="true"
+                class="hero-art__img"
+              />
             </div>
           </section>
+
+          <div class="section-divider" aria-hidden="true">
+            <img src="assets/img/decor/bee-trail-divider.png" alt="" aria-hidden="true" />
+          </div>
 
           <section class="content-panel">
             <h2>Why Our Honey</h2>
@@ -78,6 +105,10 @@
               <li>Local pickup and small-batch freshness.</li>
             </ul>
           </section>
+
+          <div class="section-divider" aria-hidden="true">
+            <img src="assets/img/decor/bee-trail-divider.png" alt="" aria-hidden="true" />
+          </div>
 
           <section class="content-panel">
             <h2>How to Order Locally</h2>
@@ -106,28 +137,40 @@
             </div>
           </section>
 
+          <div class="section-divider" aria-hidden="true">
+            <img src="assets/img/decor/bee-trail-divider.png" alt="" aria-hidden="true" />
+          </div>
+
           <section class="content-panel">
             <h2>Shop Preview</h2>
             <div class="product-grid">
               <article class="product-card">
+                <img class="product-icon" src="assets/img/icons/icon-honey-jar.png" alt="" aria-hidden="true" />
                 <h3>Raw Honey</h3>
                 <p>Available seasonally</p>
               </article>
               <article class="product-card">
+                <img class="product-icon" src="assets/img/icons/icon-pepper.png" alt="" aria-hidden="true" />
                 <h3>Cherry Bomb Hot Sauce</h3>
                 <p>Ask to order</p>
               </article>
               <article class="product-card">
+                <img class="product-icon" src="assets/img/icons/icon-balm.png" alt="" aria-hidden="true" />
                 <h3>Honey Lip Balm</h3>
                 <p>Coming soon</p>
               </article>
               <article class="product-card">
+                <img class="product-icon" src="assets/img/icons/icon-honey-dipper.png" alt="" aria-hidden="true" />
                 <h3>Gift Sets</h3>
                 <p>Coming soon</p>
               </article>
             </div>
             <p>Want something today? Text, call, or email to order.</p>
           </section>
+
+          <div class="section-divider" aria-hidden="true">
+            <img src="assets/img/decor/bee-trail-divider.png" alt="" aria-hidden="true" />
+          </div>
 
           <section class="content-panel">
             <h2>Meet the Maker</h2>
