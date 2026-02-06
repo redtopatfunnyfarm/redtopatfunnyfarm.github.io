@@ -47,9 +47,9 @@ body {
 
   background-repeat: no-repeat, repeat;
   background-position: top right, top left;
-  background-size: auto, 420px 420px; /* adjust tile size if needed */
+  background-size: auto, 420px 420px;
   background-attachment: scroll, scroll;
-  background-color: #c87a10; /* fallback */
+  background-color: #c87a10;
 }
 
 a {
@@ -122,6 +122,12 @@ main {
   padding: var(--space-7) 0;
 }
 
+.content-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
 .content-panel {
   padding: var(--space-6);
   border-radius: 20px;
@@ -131,6 +137,34 @@ main {
 }
 
 .content-panel h2 {
+  margin-top: 0;
+}
+
+.lead-in {
+  margin: 0 0 var(--space-2);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.product-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.product-card {
+  padding: var(--space-4);
+  border-radius: 16px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-shadow);
+}
+
+.product-card h3 {
   margin-top: 0;
 }
 
@@ -197,5 +231,9 @@ p {
   .hero-form input[type="email"],
   .hero-form__fields button {
     width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
   }
 }
