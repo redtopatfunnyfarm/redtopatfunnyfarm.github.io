@@ -5,20 +5,30 @@
   --honey-shadow: #3b2408;
 }
 
+html,
 body {
-  min-height: 100vh;
+  height: 100%;
+}
+
+body {
   margin: 0;
-  background-color: var(--honey-gold);
+  min-height: 100vh;
+
+  /* top layer: single glow (never tiles) */
   background-image:
     radial-gradient(
       circle at 85% 15%,
-      rgba(255, 230, 160, 0.55),
-      rgba(255, 180, 60, 0.15) 35%,
-      rgba(0, 0, 0, 0) 60%
+      rgba(255, 240, 190, 0.65) 0%,
+      rgba(255, 200, 90, 0.28) 32%,
+      rgba(255, 160, 40, 0.10) 52%,
+      rgba(0, 0, 0, 0) 70%
     ),
+    /* TODO: add assets/img/backgrounds/honeycomb-tile.png */
     url("assets/img/backgrounds/honeycomb-tile.png");
+
   background-repeat: no-repeat, repeat;
-  background-size: cover, auto;
   background-position: top right, top left;
-  background-attachment: scroll, fixed;
+  background-size: auto, 420px 420px; /* adjust tile size if needed */
+  background-attachment: scroll, scroll;
+  background-color: #c87a10; /* fallback */
 }
