@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locations | Shop at Funny Farm</title>
+    <meta
+      name="description"
+      content="Find local Western New York locations carrying Funny Farm products."
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="site-branding">
+          <h1>Shop at Funny Farm</h1>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="about.html">About</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="locations.html" aria-current="page">Locations</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="content-panel">
+          <h2>Find Funny Farm Products Locally</h2>
+          <p>
+            Explore local Western New York stores that currently carry Funny Farm
+            products.
+          </p>
+          <div id="locations-map" class="locations-map" aria-label="Map of store locations"></div>
+
+          <h3>Store Locations</h3>
+          <ul id="locations-list"></ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 Shop at Funny Farm. RedTopAtFunnyFarm@gmail.com</p>
+      </div>
+    </footer>
+    <div class="chatbot-wrap" aria-label="Bee Woman Chat">
+      <button class="chatbot-toggle" type="button" aria-expanded="true" aria-controls="chatbot-panel">
+        <span>Bee Help</span>
+      </button>
+
+      <section id="chatbot-panel" class="chatbot-panel" role="dialog" aria-label="Bee Woman Chatbot">
+        <div class="chatbot-mascot" role="button" tabindex="0" aria-label="Expand chat">
+          <img src="assets/img/mascot/bee-woman-chatbot.png" alt="Bee Woman helper" width="160" height="160" />
+        </div>
+
+        <div class="chatbot-header">
+          <div>
+            <strong>Ask Bee Woman</strong>
+            <div class="chatbot-sub">Local honey questions • ordering • storage</div>
+          </div>
+          <button class="chatbot-min" type="button" aria-label="Minimize chat">–</button>
+        </div>
+
+        <div class="chatbot-messages" aria-live="polite"></div>
+
+        <form class="chatbot-form">
+          <label class="sr-only" for="chatbot-input">Type your question</label>
+          <input id="chatbot-input" name="q" type="text" placeholder="Ask about raw honey, crystallization, ordering…" autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+
+        <div class="chatbot-footer">
+          <a href="faq.html">See full FAQ</a>
+          <span>•</span>
+          <a href="tel:+17167830857">Text/Call</a>
+          <span>•</span>
+          <a href="mailto:RedTopAtFunnyFarm@gmail.com">Email</a>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+      const locations = [
+        {
+          name: "Paul Norman Hair Design",
+          address: "4522 Broadway, Depew, NY 14043",
+          phone: "(716) 685-7961",
+          phoneLink: "+17166857961",
+          facebook: "https://www.facebook.com/Paul-Norman-Hair-Design-227022530644587/",
+          notes: "CASH ONLY; Honey 1 lb, 2.5 lb",
+          lat: 42.90191692383962,
+          lng: -78.70754792023547,
+        },
+        {
+          name: "Depew Deli & Grocery",
+          address: "4911 Broadway, Depew, NY 14043",
+          phone: "(716) 684-0204",
+          phoneLink: "+17166840204",
+          facebook: "https://www.facebook.com/Depew-Deli-Grocery-198105706897085/",
+          notes: "Honey 1 lb",
+          lat: 42.90144196325344,
+          lng: -78.69319161995347,
+        },
+        {
+          name: "Elador Rose Boutique",
+          address: "5333 Transit Road, Depew, NY 14043",
+          phone: "(716) 603-8417",
+          phoneLink: "+17166038417",
+          facebook: "https://www.facebook.com/profile.php?id=61557342790788",
+          notes: "Honey 1 lb, 2.5 lb",
+          lat: 42.900251610980945,
+          lng: -78.69659961050819,
+        },
+        {
+          name: "Marlene and Phil’s",
+          address: "5333 Transit Road, Depew, NY 14043",
+          phone: "(716) 683-0256",
+          phoneLink: "+17166830256",
+          facebook: "https://www.facebook.com/MarlenePhilsVitaminHerbCenter",
+          notes: "Honey 1 lb, 2.5 lb",
+          lat: 42.90043161098095,
+          lng: -78.69659961050819,
+          directionsLat: 42.900251610980945,
+          directionsLng: -78.69659961050819,
+        },
+        {
+          name: "Nana’s Mediterranean",
+          address: "12775 Broadway Street, Tops Plaza, Alden, NY 14036",
+          phone: "(716) 902-5029",
+          phoneLink: "+17169025029",
+          facebook: "https://www.facebook.com/profile.php?id=100063617550561",
+          notes: "Honey 1 lb, 2.5 lb",
+          lat: 42.8932,
+          lng: -78.509455,
+        },
+        {
+          name: "Foxhole Farm Winery",
+          address: "8325 Cole Road, Colden, NY 14033",
+          phone: "(716) 226-4287",
+          phoneLink: "+17162264287",
+          facebook: "https://www.facebook.com/foxholefarmwinery",
+          notes: "Honey",
+          lat: 42.658218,
+          lng: -78.716112,
+        },
+      ];
+
+      const map = L.map("locations-map").setView([42.9019, -78.706], 10);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+
+      const bounds = [];
+      const locationsList = document.getElementById("locations-list");
+
+      locations.forEach((location) => {
+        const marker = L.marker([location.lat, location.lng]).addTo(map);
+        const destinationLat = location.directionsLat ?? location.lat;
+        const destinationLng = location.directionsLng ?? location.lng;
+        const popupHtml = `
+          <strong>${location.name}</strong><br>
+          ${location.address}<br>
+          <a href="tel:${location.phoneLink}">${location.phone}</a><br>
+          <a href="${location.facebook}" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+          ${location.notes}<br>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}" target="_blank" rel="noopener noreferrer">Get Directions</a>
+        `;
+
+        marker.bindPopup(popupHtml);
+        bounds.push([location.lat, location.lng]);
+
+        const listItem = document.createElement("li");
+        const listButton = document.createElement("button");
+        listButton.type = "button";
+        listButton.textContent = `${location.name} — ${location.address}`;
+        listButton.addEventListener("click", () => {
+          map.setView([location.lat, location.lng], 13);
+          marker.openPopup();
+        });
+        listItem.appendChild(listButton);
+        locationsList.appendChild(listItem);
+      });
+
+      map.fitBounds(bounds, { padding: [40, 40] });
+    </script>
+    <script src="assets/js/chatbot.js" defer></script>
+  </body>
+</html>
