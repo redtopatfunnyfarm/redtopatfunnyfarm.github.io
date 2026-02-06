@@ -208,6 +208,14 @@ main {
   margin-top: 0;
 }
 
+.locations-map {
+  width: 100%;
+  height: 420px;
+  border-radius: 16px;
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--panel-shadow);
+}
+
 .lead-in {
   margin: 0 0 var(--space-2);
 }
@@ -426,6 +434,9 @@ p {
     max-width: 260px;
   }
 
+  .locations-map {
+    height: 320px;
+  }
   .section-divider {
     margin: calc(var(--space-2) * -1) 0;
   }
