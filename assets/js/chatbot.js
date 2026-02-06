@@ -1,6 +1,7 @@
 (function () {
   const STORAGE_HISTORY_KEY = 'beeWomanChatHistory';
   const STORAGE_MIN_KEY = 'beeWomanChatMinimized';
+  const STORAGE_EXPANDED_KEY = 'beeWomanChatExpanded';
 
   const chatbotWrap = document.querySelector('.chatbot-wrap');
   if (!chatbotWrap) return;
@@ -11,8 +12,9 @@
   const messagesEl = chatbotWrap.querySelector('.chatbot-messages');
   const form = chatbotWrap.querySelector('.chatbot-form');
   const input = chatbotWrap.querySelector('#chatbot-input');
+  const mascot = chatbotWrap.querySelector('.chatbot-mascot');
 
-  if (!panel || !toggleBtn || !minBtn || !messagesEl || !form || !input) return;
+  if (!panel || !toggleBtn || !minBtn || !messagesEl || !form || !input || !mascot) return;
 
   const canonicalAnswers = [
     {
@@ -164,11 +166,22 @@
     }
   }
 
+  function setExpandedState(expanded) {
+    chatbotWrap.classList.toggle('is-expanded', expanded);
+    chatbotWrap.classList.toggle('is-compact', !expanded);
+    panel.setAttribute('aria-expanded', String(expanded));
+    localStorage.setItem(STORAGE_EXPANDED_KEY, expanded ? '1' : '0');
+  }
+
   function setMinimizedState(minimized) {
     chatbotWrap.classList.toggle('is-minimized', minimized);
     panel.hidden = minimized;
     toggleBtn.setAttribute('aria-expanded', String(!minimized));
     localStorage.setItem(STORAGE_MIN_KEY, minimized ? '1' : '0');
+
+    if (!minimized) {
+      setExpandedState(localStorage.getItem(STORAGE_EXPANDED_KEY) === '1');
+    }
   }
 
   const priorHistory = readHistory();
@@ -182,21 +195,50 @@
     );
   }
 
-  setMinimizedState(localStorage.getItem(STORAGE_MIN_KEY) === '1');
+  const isMinimized = localStorage.getItem(STORAGE_MIN_KEY) === '1';
+  const isExpanded = localStorage.getItem(STORAGE_EXPANDED_KEY) === '1';
+
+  setExpandedState(isExpanded);
+  setMinimizedState(isMinimized);
 
   toggleBtn.addEventListener('click', function () {
     const minimized = chatbotWrap.classList.contains('is-minimized');
-    setMinimizedState(!minimized);
+
+    if (minimized) {
+      setMinimizedState(false);
+    } else {
+      setMinimizedState(true);
+    }
   });
 
   minBtn.addEventListener('click', function () {
-    setMinimizedState(true);
+    setExpandedState(false);
   });
+
+  function expandFromInteraction() {
+    if (chatbotWrap.classList.contains('is-minimized')) return;
+    setExpandedState(true);
+  }
+
+  mascot.addEventListener('click', expandFromInteraction);
+  mascot.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      expandFromInteraction();
+    }
+  });
+
+  input.addEventListener('focus', expandFromInteraction);
+  input.addEventListener('click', expandFromInteraction);
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     const question = input.value.trim();
     if (!question) return;
+
+    if (chatbotWrap.classList.contains('is-compact')) {
+      setExpandedState(true);
+    }
 
     appendMessage('user', question, true);
     appendMessage('bot', bestMatch(question), true);
