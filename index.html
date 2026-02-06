@@ -15,9 +15,10 @@
       <div class="container">
         <div class="site-branding">
           <h1>Shop at Funny Farm</h1>
+          <p class="site-tagline">Small-batch honey • hot sauce • farm-crafted goods</p>
         </div>
         <nav class="site-nav" aria-label="Primary">
-          <a href="index.html">Home</a>
+          <a href="index.html" aria-current="page">Home</a>
           <a href="shop.html">Shop</a>
           <a href="about.html">About</a>
           <a href="faq.html">FAQ</a>
@@ -50,34 +51,14 @@
                 Pure raw honey, farm-to-bottle hot sauces, wildcrafted creations,
                 and natural health &amp; beauty — made with love and intention.
               </p>
-              <form
-                class="hero-form"
-                action="https://formsubmit.co/RedTopAtFunnyFarm@gmail.com"
-                method="POST"
-              >
-                <input
-                  type="hidden"
-                  name="_subject"
-                  value="New Honey List Signup - Shop at Funny Farm"
-                />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <label for="honey-list-email">Get updates (no spam):</label>
-                <div class="hero-form__fields">
-                  <input
-                    id="honey-list-email"
-                    name="email"
-                    type="email"
-                    placeholder="you@email.com"
-                    required
-                  />
-                  <button type="submit">Join the Honey List</button>
-                </div>
-              </form>
-              <p class="hero-form__note">We'll only email when honey is ready.</p>
+              <p class="hero-blurb">
+                Woman-owned &amp; single-producer. Raw, unfiltered honey — never overheated.
+                Harvests change with the season, just like the flowers.
+              </p>
               <div class="button-row">
                 <a class="button" href="shop.html">Shop All Products</a>
-                <a class="button" href="about.html">Meet the Maker</a>
+                <a class="button" href="tel:+17167830857">Text/Call to Order</a>
+                <a class="text-link" href="#order">How pickup works</a>
               </div>
             </div>
             <div class="hero-art" aria-hidden="true">
@@ -97,12 +78,10 @@
           <section class="content-panel">
             <h2>Why Our Honey</h2>
             <ul>
-              <li>Pure, raw, unfiltered honey — never overheated.</li>
-              <li>Woman-owned, single-producer small business.</li>
-              <li>
-                Seasonal floral character (every harvest is a little different).
-              </li>
-              <li>Local pickup and small-batch freshness.</li>
+              <li>Raw &amp; unfiltered — never overheated.</li>
+              <li>Small harvests, bottled by hand.</li>
+              <li>Flavor changes with the bloom (every jar tells the season).</li>
+              <li>Local pickup in Western NY.</li>
             </ul>
           </section>
 
@@ -110,8 +89,12 @@
             <img src="assets/img/decor/bee-trail-divider.png" alt="" aria-hidden="true" />
           </div>
 
-          <section class="content-panel">
+          <section class="content-panel" id="order">
             <h2>How to Order Locally</h2>
+            <p>
+              Right now I’m local-first: text/call/email, and I’ll confirm what’s
+              available and set up pickup.
+            </p>
             <ol>
               <li>
                 Text or call your order:
@@ -165,7 +148,46 @@
                 <p>Coming soon</p>
               </article>
             </div>
-            <p>Want something today? Text, call, or email to order.</p>
+            <p>Want something today? Text/call and I’ll tell you what’s ready right now.</p>
+          </section>
+
+          <div class="section-divider" aria-hidden="true">
+            <img src="assets/img/decor/bee-trail-divider.png" alt="" aria-hidden="true" />
+          </div>
+
+          <section class="content-panel signup-panel">
+            <h2>Get on the Honey List</h2>
+            <p>
+              If you want first dibs when jars are ready, hop on my list. No mass blasts,
+              just simple updates from the farm.
+            </p>
+            <form
+              class="signup-form"
+              action="https://formsubmit.co/RedTopAtFunnyFarm@gmail.com"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Honey List Signup - Shop at Funny Farm"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <label for="honey-list-email">Email address</label>
+              <div class="signup-form__fields">
+                <input
+                  id="honey-list-email"
+                  name="email"
+                  type="email"
+                  placeholder="you@email.com"
+                  required
+                />
+                <button type="submit">Join the Honey List</button>
+              </div>
+            </form>
+            <p class="signup-note">
+              I only email when honey is ready or when a small batch drops.
+            </p>
           </section>
 
           <div class="section-divider" aria-hidden="true">
