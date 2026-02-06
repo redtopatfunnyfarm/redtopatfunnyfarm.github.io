@@ -84,5 +84,41 @@
         <p>&copy; 2026 Shop at Funny Farm. RedTopAtFunnyFarm@gmail.com</p>
       </div>
     </footer>
+    <div class="chatbot-wrap" aria-label="Bee Woman Chat">
+      <button class="chatbot-toggle" type="button" aria-expanded="true" aria-controls="chatbot-panel">
+        <span>Bee Help</span>
+      </button>
+
+      <section id="chatbot-panel" class="chatbot-panel" role="dialog" aria-label="Bee Woman Chatbot">
+        <div class="chatbot-mascot">
+          <img src="assets/img/mascot/bee-woman-chatbot.png" alt="Bee Woman helper" width="160" height="160" />
+        </div>
+
+        <div class="chatbot-header">
+          <div>
+            <strong>Ask Bee Woman</strong>
+            <div class="chatbot-sub">Local honey questions • ordering • storage</div>
+          </div>
+          <button class="chatbot-min" type="button" aria-label="Minimize chat">–</button>
+        </div>
+
+        <div class="chatbot-messages" aria-live="polite"></div>
+
+        <form class="chatbot-form">
+          <label class="sr-only" for="chatbot-input">Type your question</label>
+          <input id="chatbot-input" name="q" type="text" placeholder="Ask about raw honey, crystallization, ordering…" autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+
+        <div class="chatbot-footer">
+          <a href="faq.html">See full FAQ</a>
+          <span>•</span>
+          <a href="tel:+17167830857">Text/Call</a>
+          <span>•</span>
+          <a href="mailto:RedTopAtFunnyFarm@gmail.com">Email</a>
+        </div>
+      </section>
+    </div>
+    <script src="assets/js/chatbot.js" defer></script>
   </body>
 </html>
