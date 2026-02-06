@@ -1,8 +1,21 @@
 {
   "name": "Shop at Funny Farm",
   "short_name": "Funny Farm",
+  "description": "Small-batch honey, hot sauce, and farm-crafted goods",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fff8e7",
-  "theme_color": "#ffb347"
+  "background_color": "#ffe6a0",
+  "theme_color": "#f2b850",
+  "icons": [
+    {
+      "src": "/assets/img/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
