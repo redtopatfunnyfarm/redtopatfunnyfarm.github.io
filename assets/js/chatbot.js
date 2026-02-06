@@ -1,7 +1,7 @@
 (function () {
-  const STORAGE_HISTORY_KEY = 'beeWomanChatHistory';
-  const STORAGE_MIN_KEY = 'beeWomanChatMinimized';
-  const STORAGE_EXPANDED_KEY = 'beeWomanChatExpanded';
+  const STORAGE_HISTORY_KEY = 'redTopChatHistory';
+  const STORAGE_MIN_KEY = 'redTopChatMinimized';
+  const STORAGE_EXPANDED_KEY = 'redTopChatExpanded';
 
   const chatbotWrap = document.querySelector('.chatbot-wrap');
   if (!chatbotWrap) return;
@@ -190,7 +190,7 @@
   } else {
     appendMessage(
       'bot',
-      'Hi honey friend — I\'m Bee Woman. Ask me about ordering, pickup, raw honey, storage, or crystallization.',
+      'Hi honey friend — I\'m Red Top. Ask me about ordering, pickup, raw honey, storage, or crystallization.',
       true
     );
   }
