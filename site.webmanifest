@@ -1,0 +1,8 @@
+{
+  "name": "Shop at Funny Farm",
+  "short_name": "Funny Farm",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8e7",
+  "theme_color": "#ffb347"
+}
