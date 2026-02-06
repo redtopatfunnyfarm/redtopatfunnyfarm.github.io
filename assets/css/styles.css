@@ -23,8 +23,7 @@ body {
       rgba(255, 160, 40, 0.10) 52%,
       rgba(0, 0, 0, 0) 70%
     ),
-    /* TODO: add assets/img/backgrounds/honeycomb-tile.png */
-    url("assets/img/backgrounds/honeycomb-tile.png");
+    url("../img/backgrounds/honeycomb-tile.png");
 
   background-repeat: no-repeat, repeat;
   background-position: top right, top left;
