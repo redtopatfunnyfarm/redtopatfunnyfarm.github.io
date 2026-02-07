@@ -49,7 +49,7 @@
 
             <div class="product-grid shop-grid" id="shop-grid">
               <article class="product-card">
-                <img class="shop-product-image" src="assets/img/products/1 lb fall.webp" alt="Raw Honey — 1 lb (Seasonal)" loading="lazy" />
+                <img class="shop-product-image" src="assets/img/products/1 lb fall.webp" alt="Raw Honey — 1 lb (Seasonal)" loading="lazy" role="button" tabindex="0" data-product-id="raw-honey-1lb" data-price="14.00" data-name="Raw Honey — 1 lb (Seasonal)" />
                 <h3>Raw Honey — 1 lb (Seasonal)</h3>
                 <p>A small-batch seasonal jar with floral notes that shift through the year.</p>
                 <p class="shop-price">$14.00</p>
@@ -57,7 +57,7 @@
               </article>
 
               <article class="product-card">
-                <img class="shop-product-image" src="assets/img/products/2.5 fall.webp" alt="Raw Honey — 2.5 lb" loading="lazy" />
+                <img class="shop-product-image" src="assets/img/products/2.5 fall.webp" alt="Raw Honey — 2.5 lb" loading="lazy" role="button" tabindex="0" data-product-id="raw-honey-2-5lb" data-price="28.00" data-name="Raw Honey — 2.5 lb" />
                 <h3>Raw Honey — 2.5 lb</h3>
                 <p>A larger raw honey jar for regular tea, toast, and kitchen use.</p>
                 <p class="shop-price">$28.00</p>
@@ -65,7 +65,7 @@
               </article>
 
               <article class="product-card">
-                <img class="shop-product-image" src="assets/img/products/2.5.png" alt="Raw Honey — 2.5 lb" loading="lazy" />
+                <img class="shop-product-image" src="assets/img/products/2.5.png" alt="Raw Honey — 2.5 lb" loading="lazy" role="button" tabindex="0" data-product-id="raw-honey-2-5lb" data-price="28.00" data-name="Raw Honey — 2.5 lb" />
                 <h3>Raw Honey — 2.5 lb</h3>
                 <p>The same 2.5 lb favorite in an alternate seasonal label photo.</p>
                 <p class="shop-price">$28.00</p>
@@ -73,7 +73,7 @@
               </article>
 
               <article class="product-card">
-                <img class="shop-product-image" src="assets/img/products/5 lb honey.webp" alt="Raw Honey — 5 lb" loading="lazy" />
+                <img class="shop-product-image" src="assets/img/products/5 lb honey.webp" alt="Raw Honey — 5 lb" loading="lazy" role="button" tabindex="0" data-product-id="raw-honey-5lb" data-price="52.00" data-name="Raw Honey — 5 lb" />
                 <h3>Raw Honey — 5 lb</h3>
                 <p>A big pantry-ready bucket of raw, unfiltered honey from local hives.</p>
                 <p class="shop-price">$52.00</p>
@@ -81,7 +81,7 @@
               </article>
 
               <article class="product-card">
-                <img class="shop-product-image" src="assets/img/products/5 lb.webp" alt="Raw Honey — 5 lb" loading="lazy" />
+                <img class="shop-product-image" src="assets/img/products/5 lb.webp" alt="Raw Honey — 5 lb" loading="lazy" role="button" tabindex="0" data-product-id="raw-honey-5lb" data-price="52.00" data-name="Raw Honey — 5 lb" />
                 <h3>Raw Honey — 5 lb</h3>
                 <p>The 5 lb size shown in a second harvest photo for reference.</p>
                 <p class="shop-price">$52.00</p>
@@ -89,7 +89,7 @@
               </article>
 
               <article class="product-card">
-                <img class="shop-product-image" src="assets/img/products/Cherry Bomb hot honey 8 oz.webp" alt="Cherry Bomb Hot Honey — 8 oz" loading="lazy" />
+                <img class="shop-product-image" src="assets/img/products/Cherry Bomb hot honey 8 oz.webp" alt="Cherry Bomb Hot Honey — 8 oz" loading="lazy" role="button" tabindex="0" data-product-id="cherry-bomb-hot-honey-8oz" data-price="10.00" data-name="Cherry Bomb Hot Honey — 8 oz" />
                 <h3>Cherry Bomb Hot Honey — 8 oz</h3>
                 <p>Sweet honey heat with a cherry-forward kick for pizza, wings, and glaze.</p>
                 <p class="shop-price">$10.00</p>
@@ -97,7 +97,7 @@
               </article>
 
               <article class="product-card">
-                <img class="shop-product-image" src="assets/img/products/hot sauce partial.webp" alt="Cherry Bomb Hot Sauce — 8 oz" loading="lazy" />
+                <img class="shop-product-image" src="assets/img/products/hot sauce partial.webp" alt="Cherry Bomb Hot Sauce — 8 oz" loading="lazy" role="button" tabindex="0" data-product-id="cherry-bomb-hot-sauce-8oz" data-price="12.00" data-name="Cherry Bomb Hot Sauce — 8 oz" />
                 <h3>Cherry Bomb Hot Sauce — 8 oz</h3>
                 <p>A bright, peppery sauce made for adding farm-grown heat to any meal.</p>
                 <p class="shop-price">$12.00</p>
@@ -131,6 +131,23 @@
         <a class="button" href="tel:+17167830857">Text to Order</a>
       </div>
     </aside>
+
+    <div id="image-modal-overlay" class="image-modal-overlay" hidden></div>
+    <div id="image-modal" class="image-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="image-modal-title">
+      <div class="image-modal__panel" role="document">
+        <div class="image-modal__header">
+          <h2 id="image-modal-title" class="sr-only">Product image</h2>
+          <button type="button" id="image-modal-close" class="image-modal__close" aria-label="Close image">×</button>
+        </div>
+
+        <img id="image-modal-img" class="image-modal__img" src="" alt="" />
+
+        <div class="image-modal__actions">
+          <p id="image-modal-price" class="image-modal__price">$0.00</p>
+          <button type="button" id="image-modal-add" class="image-modal__add">Add to cart</button>
+        </div>
+      </div>
+    </div>
 
     <div class="chatbot-wrap" aria-label="Bee Woman Chat">
       <button class="chatbot-toggle" type="button" aria-expanded="true" aria-controls="chatbot-panel">

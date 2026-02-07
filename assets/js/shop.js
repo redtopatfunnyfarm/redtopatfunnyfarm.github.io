@@ -33,6 +33,12 @@ const PRODUCTS = {
   }
 };
 
+let lastFocusedImage = null;
+let modalState = {
+  productId: null,
+  price: 0
+};
+
 function loadCart() {
   try {
     const data = JSON.parse(localStorage.getItem(CART_KEY));
@@ -57,13 +63,14 @@ function saveCart(cart) {
 
 function addToCart(productId) {
   if (!PRODUCTS[productId]) {
-    return;
+    return false;
   }
 
   const cart = loadCart();
   cart[productId] = (cart[productId] || 0) + 1;
   saveCart(cart);
   renderCart();
+  return true;
 }
 
 function removeFromCart(productId) {
@@ -173,11 +180,85 @@ function closeCart() {
   }, 220);
 }
 
+function openImageModal({ src, alt, productId, price }) {
+  const overlay = document.getElementById("image-modal-overlay");
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("image-modal-img");
+  const modalPrice = document.getElementById("image-modal-price");
+
+  modalImg.src = src;
+  modalImg.alt = alt;
+  modalPrice.textContent = `$${Number(price).toFixed(2)}`;
+
+  modalState = {
+    productId,
+    price: Number(price)
+  };
+
+  overlay.hidden = false;
+  overlay.classList.add("is-open");
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+
+  document.getElementById("image-modal-close").focus();
+}
+
+function closeImageModal() {
+  const overlay = document.getElementById("image-modal-overlay");
+  const modal = document.getElementById("image-modal");
+
+  overlay.classList.remove("is-open");
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+
+  setTimeout(() => {
+    if (!modal.classList.contains("is-open")) {
+      overlay.hidden = true;
+    }
+  }, 220);
+
+  if (lastFocusedImage) {
+    lastFocusedImage.focus();
+  }
+}
+
 function bindEvents() {
   document.querySelectorAll("[data-add-to-cart]").forEach((button) => {
     button.addEventListener("click", () => {
-      addToCart(button.dataset.addToCart);
+      const added = addToCart(button.dataset.addToCart);
+      if (added) {
+        openCart();
+      }
     });
+  });
+
+  document.querySelectorAll(".shop-product-image[role='button']").forEach((image) => {
+    const openFromImage = () => {
+      lastFocusedImage = image;
+      openImageModal({
+        src: image.currentSrc || image.src,
+        alt: image.dataset.name || image.alt,
+        productId: image.dataset.productId,
+        price: image.dataset.price || PRODUCTS[image.dataset.productId]?.price || 0
+      });
+    };
+
+    image.addEventListener("click", openFromImage);
+    image.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openFromImage();
+      }
+    });
+  });
+
+  document.getElementById("image-modal-overlay").addEventListener("click", closeImageModal);
+  document.getElementById("image-modal-close").addEventListener("click", closeImageModal);
+  document.getElementById("image-modal-add").addEventListener("click", () => {
+    if (modalState.productId && addToCart(modalState.productId)) {
+      openCart();
+      closeImageModal();
+    }
   });
 
   document.getElementById("open-cart-button").addEventListener("click", openCart);
@@ -200,6 +281,7 @@ function bindEvents() {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
+      closeImageModal();
       closeCart();
     }
   });
