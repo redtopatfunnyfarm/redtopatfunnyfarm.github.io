@@ -21,7 +21,7 @@
         <nav class="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="shop.html">Shop</a>
-          <a href="about.html">About</a>
+          <a href="about.html" aria-current="page">About</a>
           <a href="faq.html">FAQ</a>
           <a href="contact.html">Contact</a>
           <a href="locations.html">Locations</a>
@@ -32,35 +32,119 @@
     <main>
       <div class="container">
         <div class="content-stack">
-          <section class="content-panel">
-            <h2>Meet the Maker</h2>
-          </section>
+          <section class="content-panel about-hero">
+            <div class="about-hero__copy">
+              <h2>Meet the Maker</h2>
+              <p>
+                Welcome to Funny Farm — my little corner of Western New York where
+                I keep bees, grow peppers, and make small-batch goods I’m proud to
+                share.
+              </p>
+              <p>
+                My beekeeping journey started years ago in Corfu, New York, and
+                it’s grown into a farm-made rhythm I love: tending hives, watching
+                the blooms change, and bottling honey that tastes like the season.
+              </p>
+              <p>
+                I believe local bees matter — for the health of our land, our
+                gardens, and our food. Raw honey is one of nature’s simplest gifts,
+                and I do my best to keep it honest: small harvests, careful
+                handling, and never overheated.
+              </p>
+            </div>
 
-          <section class="content-panel">
-            <h3>Welcome to Funny Farm</h3>
-            <p>
-              I’m so glad you’re here. Funny Farm is my little corner of Western
-              New York where I make honest, useful goods I’m proud to share.
-            </p>
-          </section>
-
-          <section class="content-panel">
-            <h3>What I make</h3>
-            <ul>
-              <li>Raw honey from my own hives</li>
-              <li>Farm-crafted hot sauce</li>
-              <li>Wildcrafted creations</li>
-              <li>Natural health &amp; beauty favorites</li>
-            </ul>
+            <figure class="about-hero__media">
+              <img
+                class="about-photo"
+                src="assets/img/about/maker-portrait.jpg"
+                alt="The maker behind Funny Farm"
+                loading="lazy"
+                role="button"
+                tabindex="0"
+                data-lightbox="assets/img/about/maker-portrait.jpg"
+                data-lightbox-alt="The maker behind Funny Farm"
+              />
+              <figcaption>Small-batch, farm-made, and proudly local.</figcaption>
+            </figure>
           </section>
 
           <section class="content-panel">
             <h3>How I work</h3>
             <p>
-              Everything is made in small batches with care, and many items are
-              seasonal by nature. I keep it personal so every jar and bottle
-              stays true to the farm.
+              Everything I make is small batch and seasonal by nature. I keep it
+              personal so every jar and bottle stays true to the farm.
             </p>
+
+            <div class="about-inline-grid">
+              <figure class="about-figure">
+                <img
+                  class="about-photo"
+                  src="assets/img/about/maker-bee-suit.jpg"
+                  alt="Beekeeper in protective suit at the hives"
+                  loading="lazy"
+                  role="button"
+                  tabindex="0"
+                  data-lightbox="assets/img/about/maker-bee-suit.jpg"
+                  data-lightbox-alt="Beekeeper in protective suit at the hives"
+                />
+                <figcaption>Hands-on hive work, season after season.</figcaption>
+              </figure>
+
+              <figure class="about-figure">
+                <img
+                  class="about-photo"
+                  src="assets/img/about/sunset-swarm.jpg"
+                  alt="Beekeeping moment at sunset"
+                  loading="lazy"
+                  role="button"
+                  tabindex="0"
+                  data-lightbox="assets/img/about/sunset-swarm.jpg"
+                  data-lightbox-alt="Beekeeping moment at sunset"
+                />
+                <figcaption>One of those unforgettable bee-yard days.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="content-panel">
+            <h3>From the farm &amp; the flowers</h3>
+            <p>
+              Every harvest has its own floral signature. The blooms change, the
+              nectar changes, and the honey changes — that’s the magic.
+            </p>
+
+            <div class="about-gallery">
+              <img
+                class="about-photo"
+                src="assets/img/about/bee-on-sunflower.jpg"
+                alt="Bee on a sunflower"
+                loading="lazy"
+                role="button"
+                tabindex="0"
+                data-lightbox="assets/img/about/bee-on-sunflower.jpg"
+                data-lightbox-alt="Bee on a sunflower"
+              />
+              <img
+                class="about-photo"
+                src="assets/img/about/sunflower-apiary.jpg"
+                alt="Sunflower near the apiary"
+                loading="lazy"
+                role="button"
+                tabindex="0"
+                data-lightbox="assets/img/about/sunflower-apiary.jpg"
+                data-lightbox-alt="Sunflower near the apiary"
+              />
+              <img
+                class="about-photo"
+                src="assets/img/about/pollinators-sunflower.jpg"
+                alt="Pollinators on a sunflower"
+                loading="lazy"
+                role="button"
+                tabindex="0"
+                data-lightbox="assets/img/about/pollinators-sunflower.jpg"
+                data-lightbox-alt="Pollinators on a sunflower"
+              />
+            </div>
           </section>
         </div>
       </div>
@@ -71,6 +155,16 @@
         <p>&copy; 2026 Shop at Funny Farm. RedTopAtFunnyFarm@gmail.com</p>
       </div>
     </footer>
+    <div id="image-modal-overlay" class="image-modal-overlay" hidden></div>
+    <div id="image-modal" class="image-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="image-modal-title">
+      <div class="image-modal__panel" role="document">
+        <div class="image-modal__header">
+          <h2 id="image-modal-title" class="sr-only">Image preview</h2>
+          <button type="button" id="image-modal-close" class="image-modal__close" aria-label="Close image">×</button>
+        </div>
+        <img id="image-modal-img" class="image-modal__img" src="" alt="" />
+      </div>
+    </div>
     <div class="chatbot-wrap" aria-label="Bee Woman Chat">
       <button class="chatbot-toggle" type="button" aria-expanded="true" aria-controls="chatbot-panel">
         <span>Bee Help</span>
@@ -106,6 +200,7 @@
         </div>
       </section>
     </div>
+    <script src="assets/js/lightbox.js" defer></script>
     <script src="assets/js/chatbot.js" defer></script>
   </body>
 </html>
