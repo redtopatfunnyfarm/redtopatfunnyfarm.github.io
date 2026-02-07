@@ -17,10 +17,11 @@
       <div class="container">
         <div class="site-branding">
           <h1>Shop at Funny Farm</h1>
+          <p class="site-tagline">Small-batch honey • hot sauce • farm-crafted goods</p>
         </div>
         <nav class="site-nav" aria-label="Primary">
           <a href="index.html">Home</a>
-          <a href="shop.html">Shop</a>
+          <a href="shop.html" aria-current="page">Shop</a>
           <a href="about.html">About</a>
           <a href="faq.html">FAQ</a>
           <a href="contact.html">Contact</a>
@@ -31,82 +32,80 @@
 
     <main>
       <div class="container">
-        <section class="content-panel">
-          <h2>Shop (Local Ordering)</h2>
-          <p>
-            I make everything in small batches, and what’s available can shift
-            with the season. For now, just text, call, or email me with what
-            you’d like and I’ll confirm what I have ready.
-          </p>
-
-          <div class="product-grid">
-            <article class="product-card">
-              <h3>Raw Honey (seasonal)</h3>
-              <p>Pure, raw, and unfiltered from my hives.</p>
-              <div class="button-row">
-                <a class="button" href="tel:+17167830857">Text to Order</a>
-                <a class="button" href="mailto:RedTopAtFunnyFarm@gmail.com"
-                  >Email to Order</a
-                >
+        <div class="content-stack">
+          <section class="content-panel">
+            <div class="shop-header-row">
+              <div>
+                <h2>Shop</h2>
+                <p>
+                  Checkout is coming soon. For now, add items to your cart and then text/call to
+                  place the order.
+                </p>
               </div>
-            </article>
+              <button class="shop-cart-button" type="button" id="open-cart-button" aria-controls="cart-drawer" aria-expanded="false">
+                Cart (<span id="cart-count">0</span>)
+              </button>
+            </div>
 
-            <article class="product-card">
-              <h3>Cherry Bomb Hot Sauce (8 oz)</h3>
-              <p>Sweet heat with farm-grown pepper flavor.</p>
-              <div class="button-row">
-                <a class="button" href="tel:+17167830857">Text to Order</a>
-                <a class="button" href="mailto:RedTopAtFunnyFarm@gmail.com"
-                  >Email to Order</a
-                >
-              </div>
-            </article>
+            <div class="product-grid shop-grid" id="shop-grid">
+              <article class="product-card">
+                <img class="shop-product-image" src="assets/img/products/1 lb fall.webp" alt="Raw Honey — 1 lb (Seasonal)" loading="lazy" />
+                <h3>Raw Honey — 1 lb (Seasonal)</h3>
+                <p>A small-batch seasonal jar with floral notes that shift through the year.</p>
+                <p class="shop-price">$14.00</p>
+                <button type="button" data-add-to-cart="raw-honey-1lb">Add to cart</button>
+              </article>
 
-            <article class="product-card">
-              <h3>Honey Lip Balm</h3>
-              <p>Simple daily moisture with a soft honey touch.</p>
-              <div class="button-row">
-                <a class="button" href="tel:+17167830857">Text to Order</a>
-                <a class="button" href="mailto:RedTopAtFunnyFarm@gmail.com"
-                  >Email to Order</a
-                >
-              </div>
-            </article>
+              <article class="product-card">
+                <img class="shop-product-image" src="assets/img/products/2.5 fall.webp" alt="Raw Honey — 2.5 lb" loading="lazy" />
+                <h3>Raw Honey — 2.5 lb</h3>
+                <p>A larger raw honey jar for regular tea, toast, and kitchen use.</p>
+                <p class="shop-price">$28.00</p>
+                <button type="button" data-add-to-cart="raw-honey-2-5lb">Add to cart</button>
+              </article>
 
-            <article class="product-card">
-              <h3>Honey Hand Cream</h3>
-              <p>Rich hydration for hardworking hands.</p>
-              <div class="button-row">
-                <a class="button" href="tel:+17167830857">Text to Order</a>
-                <a class="button" href="mailto:RedTopAtFunnyFarm@gmail.com"
-                  >Email to Order</a
-                >
-              </div>
-            </article>
+              <article class="product-card">
+                <img class="shop-product-image" src="assets/img/products/2.5.png" alt="Raw Honey — 2.5 lb" loading="lazy" />
+                <h3>Raw Honey — 2.5 lb</h3>
+                <p>The same 2.5 lb favorite in an alternate seasonal label photo.</p>
+                <p class="shop-price">$28.00</p>
+                <button type="button" data-add-to-cart="raw-honey-2-5lb">Add to cart</button>
+              </article>
 
-            <article class="product-card">
-              <h3>Gift Sets</h3>
-              <p>Hand-packed bundles for holidays and thank-yous.</p>
-              <div class="button-row">
-                <a class="button" href="tel:+17167830857">Text to Order</a>
-                <a class="button" href="mailto:RedTopAtFunnyFarm@gmail.com"
-                  >Email to Order</a
-                >
-              </div>
-            </article>
+              <article class="product-card">
+                <img class="shop-product-image" src="assets/img/products/5 lb honey.webp" alt="Raw Honey — 5 lb" loading="lazy" />
+                <h3>Raw Honey — 5 lb</h3>
+                <p>A big pantry-ready bucket of raw, unfiltered honey from local hives.</p>
+                <p class="shop-price">$52.00</p>
+                <button type="button" data-add-to-cart="raw-honey-5lb">Add to cart</button>
+              </article>
 
-            <article class="product-card">
-              <h3>Seasonal Specials</h3>
-              <p>Limited runs inspired by what’s fresh right now.</p>
-              <div class="button-row">
-                <a class="button" href="tel:+17167830857">Text to Order</a>
-                <a class="button" href="mailto:RedTopAtFunnyFarm@gmail.com"
-                  >Email to Order</a
-                >
-              </div>
-            </article>
-          </div>
-        </section>
+              <article class="product-card">
+                <img class="shop-product-image" src="assets/img/products/5 lb.webp" alt="Raw Honey — 5 lb" loading="lazy" />
+                <h3>Raw Honey — 5 lb</h3>
+                <p>The 5 lb size shown in a second harvest photo for reference.</p>
+                <p class="shop-price">$52.00</p>
+                <button type="button" data-add-to-cart="raw-honey-5lb">Add to cart</button>
+              </article>
+
+              <article class="product-card">
+                <img class="shop-product-image" src="assets/img/products/Cherry Bomb hot honey 8 oz.webp" alt="Cherry Bomb Hot Honey — 8 oz" loading="lazy" />
+                <h3>Cherry Bomb Hot Honey — 8 oz</h3>
+                <p>Sweet honey heat with a cherry-forward kick for pizza, wings, and glaze.</p>
+                <p class="shop-price">$10.00</p>
+                <button type="button" data-add-to-cart="cherry-bomb-hot-honey-8oz">Add to cart</button>
+              </article>
+
+              <article class="product-card">
+                <img class="shop-product-image" src="assets/img/products/hot sauce partial.webp" alt="Cherry Bomb Hot Sauce — 8 oz" loading="lazy" />
+                <h3>Cherry Bomb Hot Sauce — 8 oz</h3>
+                <p>A bright, peppery sauce made for adding farm-grown heat to any meal.</p>
+                <p class="shop-price">$12.00</p>
+                <button type="button" data-add-to-cart="cherry-bomb-hot-sauce-8oz">Add to cart</button>
+              </article>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
 
@@ -115,6 +114,24 @@
         <p>&copy; 2026 Shop at Funny Farm. RedTopAtFunnyFarm@gmail.com</p>
       </div>
     </footer>
+
+    <div id="cart-overlay" class="cart-overlay" hidden></div>
+    <aside id="cart-drawer" class="cart-drawer" aria-hidden="true" aria-labelledby="cart-title">
+      <div class="cart-drawer__header">
+        <h2 id="cart-title">Your Cart</h2>
+        <button type="button" id="close-cart-button" class="cart-close" aria-label="Close cart">×</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-summary">
+        <p>Subtotal</p>
+        <p id="cart-subtotal">$0.00</p>
+      </div>
+      <div class="cart-actions">
+        <button type="button" id="continue-shopping">Continue Shopping</button>
+        <a class="button" href="tel:+17167830857">Text to Order</a>
+      </div>
+    </aside>
+
     <div class="chatbot-wrap" aria-label="Bee Woman Chat">
       <button class="chatbot-toggle" type="button" aria-expanded="true" aria-controls="chatbot-panel">
         <span>Bee Help</span>
@@ -151,5 +168,6 @@
       </section>
     </div>
     <script src="assets/js/chatbot.js" defer></script>
+    <script src="assets/js/shop.js" defer></script>
   </body>
 </html>
