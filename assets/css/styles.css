@@ -83,6 +83,7 @@ a:focus-visible {
 }
 
 .button,
+.button-primary,
 button {
   display: inline-block;
   padding: var(--space-2) var(--space-4);
@@ -96,6 +97,8 @@ button {
 
 .button:hover,
 .button:focus-visible,
+.button-primary:hover,
+.button-primary:focus-visible,
 button:hover,
 button:focus-visible {
   background: #ffe1a1;
@@ -884,6 +887,7 @@ body.lightbox-open {
   }
 
   .button,
+  .button-primary,
   button,
   .site-nav a {
     transition: none;
@@ -891,6 +895,8 @@ body.lightbox-open {
 
   .button:hover,
   .button:focus-visible,
+  .button-primary:hover,
+  .button-primary:focus-visible,
   button:hover,
   button:focus-visible,
   .site-nav a:hover,
