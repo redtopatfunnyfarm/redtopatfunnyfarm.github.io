@@ -38,8 +38,8 @@
               <div>
                 <h2>Shop</h2>
                 <p>
-                  Checkout is coming soon. For now, add items to your cart and then text/call to
-                  place the order.
+                  Add your favorites to the cart. Secure online checkout is being tested with
+                  Square before the store opens to the public.
                 </p>
               </div>
               <button class="shop-cart-button" type="button" id="open-cart-button" aria-controls="cart-drawer" aria-expanded="false">
@@ -123,12 +123,15 @@
       </div>
       <div id="cart-items" class="cart-items"></div>
       <div class="cart-summary">
-        <p>Subtotal</p>
+        <div>
+          <p>Subtotal</p>
+          <small>Flat-rate shipping: $7.00</small>
+        </div>
         <p id="cart-subtotal">$0.00</p>
       </div>
       <div class="cart-actions">
         <button type="button" id="continue-shopping">Continue Shopping</button>
-        <a class="button" href="tel:+17167830857">Text to Order</a>
+        <a class="button" id="checkout-button" href="checkout.html">Secure test checkout</a>
       </div>
     </aside>
 

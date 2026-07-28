@@ -1,0 +1,8 @@
+{
+  "name": "redtopatfunnyfarm-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check assets/js/shop.js && node --check assets/js/checkout.js && node --check functions/api/square-payment.js"
+  }
+}

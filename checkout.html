@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Checkout | Shop at Funny Farm</title>
+    <meta name="description" content="Secure Square checkout for Shop at Funny Farm." />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="site-branding">
+          <h1>Shop at Funny Farm</h1>
+          <p class="site-tagline">Secure test checkout</p>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Return to shop</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container checkout-layout">
+        <section class="content-panel checkout-order" aria-labelledby="order-title">
+          <p class="checkout-test-badge">Square sandbox — no real charge</p>
+          <h2 id="order-title">Your order</h2>
+          <div id="checkout-items"></div>
+          <dl class="checkout-totals">
+            <div><dt>Subtotal</dt><dd id="checkout-subtotal">$0.00</dd></div>
+            <div><dt>Shipping</dt><dd>$7.00</dd></div>
+            <div><dt>Estimated Erie County tax</dt><dd id="checkout-tax">$0.00</dd></div>
+            <div class="checkout-total"><dt>Estimated total</dt><dd id="checkout-total">$0.00</dd></div>
+          </dl>
+          <p class="checkout-note">
+            This tax figure is for sandbox testing only. Production tax will use the delivery
+            destination and Tammy's confirmed registrations.
+          </p>
+        </section>
+
+        <section class="content-panel checkout-payment" aria-labelledby="payment-title">
+          <h2 id="payment-title">Shipping and payment</h2>
+          <form id="checkout-form">
+            <div class="checkout-fields">
+              <label>Full name<input name="name" autocomplete="name" required /></label>
+              <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+              <label>Phone<input name="phone" type="tel" autocomplete="tel" /></label>
+              <label class="checkout-field-wide">Street address<input name="addressLine1" autocomplete="shipping address-line1" required /></label>
+              <label class="checkout-field-wide">Apartment, suite, etc.<input name="addressLine2" autocomplete="shipping address-line2" /></label>
+              <label>City<input name="city" autocomplete="shipping address-level2" required /></label>
+              <label>State<input name="state" value="NY" maxlength="2" autocomplete="shipping address-level1" required /></label>
+              <label>ZIP code<input name="postalCode" autocomplete="shipping postal-code" required /></label>
+            </div>
+
+            <div class="square-card-wrap">
+              <label>Card information</label>
+              <div id="card-container"></div>
+            </div>
+
+            <p id="checkout-message" class="checkout-message" role="status" aria-live="polite"></p>
+            <button id="pay-button" type="submit" disabled>Complete sandbox order</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container"><p>&copy; 2026 Shop at Funny Farm. RedTopAtFunnyFarm@gmail.com</p></div>
+    </footer>
+    <script src="assets/js/checkout.js" defer></script>
+  </body>
+</html>
