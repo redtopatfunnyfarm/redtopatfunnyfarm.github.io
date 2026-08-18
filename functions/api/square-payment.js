@@ -59,15 +59,22 @@ async function squareRequest(path, token, body) {
   const response = await fetch(`https://connect.squareupsandbox.com${path}`, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token.trim()}`,
       "Content-Type": "application/json",
       "Square-Version": SQUARE_VERSION
     },
     body: JSON.stringify(body)
   });
-  const data = await response.json();
+  const text = await response.text();
+  let data = {};
+  try {
+    data = JSON.parse(text);
+  } catch {
+    data = {};
+  }
   if (!response.ok) {
-    throw new Error(data.errors?.[0]?.detail || "Square rejected the sandbox request.");
+    const detail = data.errors?.[0]?.detail || data.errors?.[0]?.code || text.slice(0, 160);
+    throw new Error(`Square sandbox error (HTTP ${response.status} on ${path})${detail ? `: ${detail}` : ""}`);
   }
   return data;
 }
