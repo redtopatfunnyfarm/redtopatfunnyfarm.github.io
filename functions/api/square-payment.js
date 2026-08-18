@@ -73,7 +73,8 @@ async function squareRequest(path, token, body) {
     data = {};
   }
   if (!response.ok) {
-    const detail = data.errors?.[0]?.detail || data.errors?.[0]?.code || text.slice(0, 160);
+    console.error(`Square ${response.status} on ${path}: ${text.slice(0, 1000)}`);
+    const detail = data.errors ? JSON.stringify(data.errors).slice(0, 300) : text.slice(0, 300);
     throw new Error(`Square sandbox error (HTTP ${response.status} on ${path})${detail ? `: ${detail}` : ""}`);
   }
   return data;
@@ -108,7 +109,7 @@ export async function onRequestPost({ request, env }) {
         service_charges: [{
           name: "Flat-rate shipping",
           amount_money: { amount: SHIPPING_CENTS, currency: "USD" },
-          calculation_phase: "SUBTOTAL",
+          calculation_phase: "SUBTOTAL_PHASE",
           taxable: true
         }],
         taxes: [{
