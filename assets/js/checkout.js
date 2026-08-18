@@ -5,11 +5,14 @@ const SHIPPING_CENTS = 700;
 const SANDBOX_TAX_RATE = 0.0875;
 
 const PRODUCTS = {
-  "raw-honey-1lb": { name: "Raw Honey — 1 lb (Seasonal)", priceCents: 1400 },
-  "raw-honey-2-5lb": { name: "Raw Honey — 2.5 lb", priceCents: 2800 },
-  "raw-honey-5lb": { name: "Raw Honey — 5 lb", priceCents: 5200 },
-  "cherry-bomb-hot-honey-8oz": { name: "Cherry Bomb Hot Honey — 8 oz", priceCents: 1000 },
-  "cherry-bomb-hot-sauce-8oz": { name: "Cherry Bomb Hot Sauce — 8 oz", priceCents: 1200 }
+  "raw-honey-8oz": { name: "She's as Sweet as Can Bee — Raw Honey, 8 oz", priceCents: 800 },
+  "raw-honey-1lb": { name: "She's as Sweet as Can Bee — Raw Honey, 1 lb", priceCents: 1300 },
+  "raw-honey-2-5lb": { name: "She's as Sweet as Can Bee — Raw Honey, 2.5 lb", priceCents: 2700 },
+  "raw-honey-5lb": { name: "She's as Sweet as Can Bee — Raw Honey, 5 lb", priceCents: 5200 },
+  "hot-honey-12oz-skep": { name: "She's a Hot Honey — 12 oz Skep Gift Jar", priceCents: 1500 },
+  "hot-honey-1lb": { name: "She's a Hot Honey — 1 lb Jar", priceCents: 1600 },
+  "hot-honey-8oz": { name: "She's a Hot Honey — 8 oz", priceCents: 1000 },
+  "hot-sauce-8oz": { name: "She's a Cherry Bomb — Hot Sauce, 8 oz", priceCents: 1300 }
 };
 
 function money(cents) {

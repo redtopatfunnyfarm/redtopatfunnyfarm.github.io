@@ -948,6 +948,22 @@ body.lightbox-open {
   gap: var(--space-2);
 }
 
+.shop-category-title {
+  margin: var(--space-6) 0 var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 3px solid #f4c430;
+  color: #4b2a14;
+}
+
+.shop-category-title:first-of-type {
+  margin-top: 0;
+}
+
+.shop-category-note {
+  margin: var(--space-3) 0 var(--space-5);
+  font-style: italic;
+}
+
 .shop-product-image {
   display: block;
   width: 100%;

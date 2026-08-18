@@ -4,3 +4,8 @@
 !.env.example
 node_modules/
 .wrangler/
+.claude/
+
+# Tammi's source documents and photos — keep out of the public repo
+content-from-tammi/
+AUDIT-*.md

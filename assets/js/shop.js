@@ -1,35 +1,53 @@
 const CART_KEY = "ff_cart";
 
 const PRODUCTS = {
+  "raw-honey-8oz": {
+    id: "raw-honey-8oz",
+    name: "She's as Sweet as Can Bee — Raw Honey, 8 oz",
+    price: 8,
+    image: "assets/img/products/raw-honey-8oz.webp"
+  },
   "raw-honey-1lb": {
     id: "raw-honey-1lb",
-    name: "Raw Honey — 1 lb (Seasonal)",
-    price: 14,
-    image: "assets/img/products/1 lb fall.webp"
+    name: "She's as Sweet as Can Bee — Raw Honey, 1 lb",
+    price: 13,
+    image: "assets/img/products/raw-honey-1lb-wildflower.webp"
   },
   "raw-honey-2-5lb": {
     id: "raw-honey-2-5lb",
-    name: "Raw Honey — 2.5 lb",
-    price: 28,
-    image: "assets/img/products/2.5 fall.webp"
+    name: "She's as Sweet as Can Bee — Raw Honey, 2.5 lb",
+    price: 27,
+    image: "assets/img/products/raw-honey-2-5lb-wildflower.png"
   },
   "raw-honey-5lb": {
     id: "raw-honey-5lb",
-    name: "Raw Honey — 5 lb",
+    name: "She's as Sweet as Can Bee — Raw Honey, 5 lb",
     price: 52,
     image: "assets/img/products/5 lb honey.webp"
   },
-  "cherry-bomb-hot-honey-8oz": {
-    id: "cherry-bomb-hot-honey-8oz",
-    name: "Cherry Bomb Hot Honey — 8 oz",
+  "hot-honey-12oz-skep": {
+    id: "hot-honey-12oz-skep",
+    name: "She's a Hot Honey — 12 oz Skep Gift Jar",
+    price: 15,
+    image: "assets/img/products/hot-honey-12oz-skep.webp"
+  },
+  "hot-honey-1lb": {
+    id: "hot-honey-1lb",
+    name: "She's a Hot Honey — 1 lb Jar",
+    price: 16,
+    image: "assets/img/products/hot-honey-1lb.webp"
+  },
+  "hot-honey-8oz": {
+    id: "hot-honey-8oz",
+    name: "She's a Hot Honey — 8 oz",
     price: 10,
     image: "assets/img/products/Cherry Bomb hot honey 8 oz.webp"
   },
-  "cherry-bomb-hot-sauce-8oz": {
-    id: "cherry-bomb-hot-sauce-8oz",
-    name: "Cherry Bomb Hot Sauce — 8 oz",
-    price: 12,
-    image: "assets/img/products/hot sauce partial.webp"
+  "hot-sauce-8oz": {
+    id: "hot-sauce-8oz",
+    name: "She's a Cherry Bomb — Hot Sauce, 8 oz",
+    price: 13,
+    image: "assets/img/products/hot-sauce-8oz-full.webp"
   }
 };
 
