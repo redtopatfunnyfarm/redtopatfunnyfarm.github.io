@@ -26,10 +26,16 @@ Last updated: August 18, 2026
 
 ### Go-live runbook (custom + Square path)
 
-1. `npx wrangler login` (one time).
-2. `npm run deploy` — creates/updates the `funnyfarm` Cloudflare Pages project.
-3. In the Cloudflare dashboard, add `SQUARE_SANDBOX_ACCESS_TOKEN` as an encrypted secret;
-   run one full sandbox order with test card 4111 1111 1111 1111.
+1. ~~`npx wrangler login`~~ DONE 2026-08-18.
+2. ~~Deploy~~ DONE 2026-08-18 — live at https://redtopatfunnyfarm.pages.dev (Pages project
+   `redtopatfunnyfarm`). Deploy updates from a clean copy of tracked files only (never the
+   repo root — `content-from-tammi/` must not be uploaded):
+   `git archive HEAD` → temp dir → `wrangler pages deploy <dir> --project-name redtopatfunnyfarm --branch main`.
+3. Add the Square sandbox token (Dan, in his own terminal — never via chat):
+   `npx wrangler pages secret put SQUARE_SANDBOX_ACCESS_TOKEN --project-name redtopatfunnyfarm`
+   (paste the token when prompted; get it from developer.squareup.com → redtopatfunnyfarm
+   app → Sandbox → Credentials → Sandbox Access Token). Then run one full sandbox order
+   with test card 4111 1111 1111 1111.
 4. Confirm the order in Square's sandbox dashboard.
 5. For production: swap application/location IDs, use `SQUARE_ACCESS_TOKEN` (production) in
    the function, real tax setup, and Tammi's sign-off.
