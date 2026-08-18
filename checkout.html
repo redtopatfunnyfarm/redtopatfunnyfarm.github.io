@@ -55,13 +55,23 @@
               <label>ZIP code<input name="postalCode" autocomplete="shipping postal-code" required /></label>
             </div>
 
+            <label class="checkout-field-wide checkout-note-field">Order note or gift message (optional)
+              <textarea name="orderNote" rows="2" maxlength="500" placeholder="Anything Tammi should know about this order?"></textarea>
+            </label>
+
             <div class="square-card-wrap">
               <label>Card information</label>
               <div id="card-container"></div>
             </div>
 
+            <p class="checkout-test-card-hint">
+              <strong>Testing this checkout?</strong> Use Square's sandbox card
+              <code>4111 1111 1111 1111</code>, any future expiration, CVV <code>111</code>,
+              ZIP <code>11111</code>. No real card is ever charged.
+            </p>
+
             <p id="checkout-message" class="checkout-message" role="status" aria-live="polite"></p>
-            <button id="pay-button" type="submit" disabled>Complete sandbox order</button>
+            <button id="pay-button" type="submit" class="button-cta" disabled>Complete sandbox order</button>
           </form>
         </section>
       </div>

@@ -1,6 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap");
 
 :root {
+  /* Funny Farm locked palette (from Tammi's master brand guide) */
+  --ff-cream: #f8e7c6;
+  --ff-cream-soft: #f7eedc;
+  --ff-honey-gold: #f4c430;
+  --ff-golden-text: #f2c94c;
+  --ff-amber-light: #e39a3b;
+  --ff-amber-mid: #b86a2b;
+  --ff-amber-deep: #8b4a1e;
+  --ff-ink: #4b2a14;
+  --ff-cherry-red: #c83424;
+  --ff-auburn-spice: #b44a1d;
+  --ff-wing-glow: #ffe6a3;
+
   --honey-gold: #f2b850;
   --honey-amber: #d98b1f;
   --honey-cream: #ffe6a0;
@@ -948,6 +961,29 @@ body.lightbox-open {
   gap: var(--space-2);
 }
 
+/* Cherry Bomb Red CTAs per the brand guide's usage rules */
+.button-cta,
+.shop-grid .product-card button[data-add-to-cart],
+.cart-actions .button,
+#image-modal-add {
+  background: var(--ff-cherry-red);
+  border-color: var(--ff-auburn-spice);
+  color: var(--ff-cream-soft);
+}
+
+.button-cta:hover,
+.button-cta:focus-visible,
+.shop-grid .product-card button[data-add-to-cart]:hover,
+.shop-grid .product-card button[data-add-to-cart]:focus-visible,
+.cart-actions .button:hover,
+.cart-actions .button:focus-visible,
+#image-modal-add:hover,
+#image-modal-add:focus-visible {
+  background: var(--ff-honey-gold);
+  border-color: var(--ff-amber-mid);
+  color: var(--ff-ink);
+}
+
 .shop-category-title {
   margin: var(--space-6) 0 var(--space-4);
   padding-bottom: var(--space-2);
@@ -1160,6 +1196,88 @@ button.cart-remove {
   gap: var(--space-4);
   padding: var(--space-2) 0;
   border-bottom: 1px solid rgba(217, 139, 31, 0.2);
+}
+
+.checkout-line-item {
+  align-items: center;
+}
+
+.checkout-line-item__thumb {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: rgba(255, 252, 240, 0.9);
+  border: 1px solid rgba(217, 139, 31, 0.25);
+  flex-shrink: 0;
+}
+
+.checkout-line-item__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.checkout-line-item__name {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.checkout-line-item__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: 2px;
+}
+
+.checkout-line-item__controls button {
+  padding: 0 10px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.checkout-line-item__remove {
+  font-size: 0.8rem;
+}
+
+.checkout-line-item__price {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.checkout-empty {
+  padding: var(--space-3) 0;
+}
+
+.checkout-note-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--honey-amber);
+  border-radius: 10px;
+  background: rgba(255, 252, 240, 0.94);
+  color: var(--text-dark);
+  font: inherit;
+  resize: vertical;
+}
+
+.checkout-note-field {
+  display: grid;
+  gap: var(--space-1);
+  font-weight: 600;
+  margin-top: var(--space-3);
+}
+
+.checkout-test-card-hint {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 10px;
+  background: rgba(255, 230, 163, 0.5);
+  border: 1px dashed var(--ff-amber-mid);
+  font-size: 0.85rem;
+}
+
+.checkout-test-card-hint code {
+  font-weight: 700;
 }
 
 .checkout-totals {

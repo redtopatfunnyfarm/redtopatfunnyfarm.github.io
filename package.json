@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node --check assets/js/shop.js && node --check assets/js/checkout.js && node --check functions/api/square-payment.js"
+    "check": "node --check assets/js/shop.js && node --check assets/js/checkout.js && node --check functions/api/square-payment.js",
+    "dev": "wrangler pages dev . --port 8790",
+    "deploy": "wrangler pages deploy . --project-name funnyfarm"
   }
 }

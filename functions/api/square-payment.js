@@ -85,6 +85,7 @@ export async function onRequestPost({ request, env }) {
 
     const items = validateCart(payload.cart);
     const customer = validateCustomer(payload.customer);
+    const orderNote = String(payload.note || "").trim().slice(0, 500);
     const idempotencyKey = crypto.randomUUID();
     const orderResult = await squareRequest("/v2/orders", env.SQUARE_SANDBOX_ACCESS_TOKEN, {
       idempotency_key: idempotencyKey,
@@ -138,7 +139,7 @@ export async function onRequestPost({ request, env }) {
       order_id: order.id,
       location_id: LOCATION_ID,
       buyer_email_address: customer.email,
-      note: "Shop at Funny Farm website sandbox order"
+      note: orderNote ? `Website sandbox order — ${orderNote}` : "Shop at Funny Farm website sandbox order"
     });
 
     return json({ orderId: order.id, paymentId: paymentResult.payment.id });

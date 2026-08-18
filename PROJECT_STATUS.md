@@ -1,6 +1,39 @@
 # Project Status and Recovery Notes
 
-Last updated: July 28, 2026
+Last updated: August 18, 2026
+
+## August 18, 2026 update
+
+- The shop catalog now uses Tammi's real products, prices (3/5/26 price list), and labeled
+  product photos, grouped by product line. The same catalog is defined in three places that
+  must stay in sync: `assets/js/shop.js`, `assets/js/checkout.js`,
+  `functions/api/square-payment.js`.
+- Checkout was built out: line items with photos and quantity controls, an optional order
+  note (passed through to the Square payment note), a sandbox test-card hint, and clear
+  error messages for every failure mode (no server, no token, bad card).
+- The Square card form initializes correctly when the site is served by a real server
+  (verified with `wrangler pages dev`). The earlier "card component unavailable" issue does
+  not reproduce; it was almost certainly caused by opening checkout without a server.
+- The payment API was verified locally end-to-end minus the charge itself (returns a clean
+  503 until `SQUARE_SANDBOX_ACCESS_TOKEN` is provided — the token is NOT on this machine;
+  recreate `.dev.vars` from `.dev.vars.example` with a fresh sandbox token to test charges).
+- Brand palette from Tammi's master guide added as CSS variables; primary CTAs now use
+  Cherry Bomb Red per her usage rules.
+- `npm run dev` starts the local Cloudflare Pages dev server; `npm run deploy` deploys
+  (requires `npx wrangler login` first — not yet done on this machine).
+- Tammi's full Drive content is downloaded to `content-from-tammi/` (gitignored).
+- A parallel Shopify evaluation store exists: ji2r1x-y5.myshopify.com (password `laipro`).
+
+### Go-live runbook (custom + Square path)
+
+1. `npx wrangler login` (one time).
+2. `npm run deploy` — creates/updates the `funnyfarm` Cloudflare Pages project.
+3. In the Cloudflare dashboard, add `SQUARE_SANDBOX_ACCESS_TOKEN` as an encrypted secret;
+   run one full sandbox order with test card 4111 1111 1111 1111.
+4. Confirm the order in Square's sandbox dashboard.
+5. For production: swap application/location IDs, use `SQUARE_ACCESS_TOKEN` (production) in
+   the function, real tax setup, and Tammi's sign-off.
+6. Point shopatfunnyfarm.com DNS (GoDaddy) at the site.
 
 ## Business goal
 
