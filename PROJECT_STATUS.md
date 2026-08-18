@@ -31,11 +31,13 @@ Last updated: August 18, 2026
    `redtopatfunnyfarm`). Deploy updates from a clean copy of tracked files only (never the
    repo root — `content-from-tammi/` must not be uploaded):
    `git archive HEAD` → temp dir → `wrangler pages deploy <dir> --project-name redtopatfunnyfarm --branch main`.
-3. Add the Square sandbox token (Dan, in his own terminal — never via chat):
-   `npx wrangler pages secret put SQUARE_SANDBOX_ACCESS_TOKEN --project-name redtopatfunnyfarm`
-   (paste the token when prompted; get it from developer.squareup.com → redtopatfunnyfarm
-   app → Sandbox → Credentials → Sandbox Access Token). Then run one full sandbox order
-   with test card 4111 1111 1111 1111.
+3. ~~Add the Square sandbox token~~ DONE 2026-08-18 (Dan added it via the Cloudflare
+   dashboard after a terminal paste stored a 1-character junk value — if payments ever
+   return empty 400s with no square-request-id, suspect a malformed secret first).
+4. ~~End-to-end sandbox order~~ DONE 2026-08-18 — two successful orders
+   (8dnKyTPIkoMVf1T8KKYLPdi6fxdZY, G0iHgVz4ZBrctMlCeQBPALtJvjBZY) after fixing the
+   service-charge enum to `SUBTOTAL_PHASE`. Sandbox checkout is fully working at
+   https://redtopatfunnyfarm.pages.dev/shop — test card 4111 1111 1111 1111, CVV 111.
 4. Confirm the order in Square's sandbox dashboard.
 5. For production: swap application/location IDs, use `SQUARE_ACCESS_TOKEN` (production) in
    the function, real tax setup, and Tammi's sign-off.
