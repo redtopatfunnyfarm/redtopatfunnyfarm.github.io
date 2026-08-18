@@ -22,7 +22,9 @@ Last updated: August 18, 2026
 - `npm run dev` starts the local Cloudflare Pages dev server; `npm run deploy` deploys
   (requires `npx wrangler login` first — not yet done on this machine).
 - Tammi's full Drive content is downloaded to `content-from-tammi/` (gitignored).
-- A parallel Shopify evaluation store exists: ji2r1x-y5.myshopify.com (password `laipro`).
+- DECISION (Dan, 2026-08-18): **Square + the custom site is the platform. Final.** The
+  temporary Shopify evaluation store (ji2r1x-y5.myshopify.com) is being retired and its
+  paid trial canceled so it stops billing Tammi's card.
 
 ### Go-live runbook (custom + Square path)
 
