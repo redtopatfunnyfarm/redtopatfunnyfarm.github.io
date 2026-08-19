@@ -1,55 +1,316 @@
 const CART_KEY = "ff_cart";
 
-const PRODUCTS = {
-  "raw-honey-8oz": {
-    id: "raw-honey-8oz",
-    name: "She's as Sweet as Can Bee — Raw Honey, 8 oz",
-    price: 8,
-    image: "assets/img/products/raw-honey-8oz.webp"
+const PLACEHOLDER_IMG = "assets/img/products/placeholder-coming-soon.png";
+
+const CATALOG = [
+  {
+    category: "She's as Sweet as Can Bee — Raw Honey",
+    note: null,
+    products: [
+      {
+        id: "raw-honey-8oz",
+        name: "She's as Sweet as Can Bee — Raw Honey, 8 oz",
+        title: "Raw Honey — 8 oz",
+        price: 8,
+        image: "assets/img/products/raw-honey-8oz.webp",
+        blurb: "A little jar of pure, raw, unfiltered honey — perfect for gifting or a first taste."
+      },
+      {
+        id: "raw-honey-1lb",
+        name: "She's as Sweet as Can Bee — Raw Honey, 1 lb",
+        title: "Raw Honey — 1 lb",
+        price: 13,
+        image: "assets/img/products/raw-honey-1lb-wildflower.webp",
+        blurb: "Pure, raw, unfiltered honey straight from my hives — full of natural goodness."
+      },
+      {
+        id: "raw-honey-2-5lb",
+        name: "She's as Sweet as Can Bee — Raw Honey, 2.5 lb",
+        title: "Raw Honey — 2.5 lb",
+        price: 27,
+        image: "assets/img/products/raw-honey-2-5lb-wildflower.png",
+        blurb: "Small-batch raw honey with natural enzymes, pollen, and floral character."
+      },
+      {
+        id: "raw-honey-5lb",
+        name: "She's as Sweet as Can Bee — Raw Honey, 5 lb",
+        title: "Raw Honey — 5 lb",
+        price: 52,
+        image: "assets/img/products/5 lb honey.webp",
+        blurb: "A big pantry-ready jug of raw, unfiltered honey — for serious honey lovers."
+      }
+    ],
+    footer: 'Need 1 gallon, 5 gallons, or more? <a href="contact.html">Message me directly</a> for bulk honey.'
   },
-  "raw-honey-1lb": {
-    id: "raw-honey-1lb",
-    name: "She's as Sweet as Can Bee — Raw Honey, 1 lb",
-    price: 13,
-    image: "assets/img/products/raw-honey-1lb-wildflower.webp"
+  {
+    category: "She's a Hot Honey — Sweet Heat",
+    products: [
+      {
+        id: "hot-honey-12oz-skep",
+        name: "She's a Hot Honey — 12 oz Skep Gift Jar",
+        title: "Hot Honey — 12 oz Skep Gift Jar",
+        price: 15,
+        image: "assets/img/products/hot-honey-12oz-skep.webp",
+        blurb: "My raw honey + homegrown cherry bomb peppers in a keepsake beehive jar."
+      },
+      {
+        id: "hot-honey-1lb",
+        name: "She's a Hot Honey — 1 lb Jar",
+        title: "Hot Honey — 1 lb Jar",
+        price: 16,
+        image: "assets/img/products/hot-honey-1lb.webp",
+        blurb: "Sweet heat made with raw honey and cherry bomb peppers — the big jar."
+      },
+      {
+        id: "hot-honey-8oz",
+        name: "She's a Hot Honey — 8 oz",
+        title: "Hot Honey — 8 oz",
+        price: 10,
+        image: "assets/img/products/Cherry Bomb hot honey 8 oz.webp",
+        blurb: "A spicy-sweet drizzle perfect for wings, pizza, and breakfast."
+      }
+    ]
   },
-  "raw-honey-2-5lb": {
-    id: "raw-honey-2-5lb",
-    name: "She's as Sweet as Can Bee — Raw Honey, 2.5 lb",
-    price: 27,
-    image: "assets/img/products/raw-honey-2-5lb-wildflower.png"
+  {
+    category: "She's a Cherry Bomb — Hot Sauce",
+    products: [
+      {
+        id: "hot-sauce-8oz",
+        name: "She's a Cherry Bomb — Hot Sauce, 8 oz",
+        title: "Cherry Bomb Hot Sauce — 8 oz",
+        price: 13,
+        image: "assets/img/products/hot-sauce-8oz-full.webp",
+        blurb: "Smooth, medium heat that builds beautifully — bright, bold, pepper-forward flavor."
+      }
+    ]
   },
-  "raw-honey-5lb": {
-    id: "raw-honey-5lb",
-    name: "She's as Sweet as Can Bee — Raw Honey, 5 lb",
-    price: 52,
-    image: "assets/img/products/5 lb honey.webp"
+  {
+    category: "Lip Balms & Body Balms",
+    note: "My original handmade balms are back — made with beeswax and honey from my own hives. New photos coming as each batch is poured.",
+    products: [
+      {
+        id: "bee-kissable",
+        name: "Bee Kissable — Lip Balm",
+        title: "Bee Kissable",
+        price: 3.3,
+        image: PLACEHOLDER_IMG,
+        blurb: "My classic beeswax lip balm — smooth, simple, and kissably soft."
+      },
+      {
+        id: "buzzed-bees",
+        name: "Buzzed Bees — Lip Balm",
+        title: "Buzzed Bees",
+        price: 3.3,
+        image: PLACEHOLDER_IMG,
+        blurb: "A fun, flavored beeswax lip balm with a little extra buzz."
+      },
+      {
+        id: "lip-stuff-for-dudes",
+        name: "Lip Stuff for Dudes — Lip Balm",
+        title: "Lip Stuff for Dudes",
+        price: 3.3,
+        image: PLACEHOLDER_IMG,
+        blurb: "No-nonsense beeswax and honey lip balm. For dudes. And everyone else."
+      },
+      {
+        id: "sun-of-a-beech-balm",
+        name: "Sun of a Beech Balm — Lip Balm",
+        title: "Sun of a Beech Balm",
+        price: 4.4,
+        image: PLACEHOLDER_IMG,
+        blurb: "Beeswax lip balm made for sunny days outside on the farm."
+      },
+      {
+        id: "blizzard-bee-balm",
+        name: "Blizzard Bee Balm — Lip Balm",
+        title: "Blizzard Bee Balm",
+        price: 4.4,
+        image: PLACEHOLDER_IMG,
+        blurb: "Winter-strength balm for wind-chapped lips — made for WNY winters."
+      },
+      {
+        id: "bee-clear",
+        name: "Bee Clear — Blemish Stick",
+        title: "Bee Clear Blemish Stick",
+        price: 6.6,
+        image: PLACEHOLDER_IMG,
+        blurb: "My beeswax blemish stick — great on pimples, bug bites, and bee stings."
+      },
+      {
+        id: "bee-paws-paw-balm",
+        name: "Bee Paws — Paw Balm",
+        title: "Bee Paws Paw Balm",
+        price: 11,
+        image: PLACEHOLDER_IMG,
+        blurb: "Gentle beeswax balm for your pup's dry, cracked paws — farm-tested."
+      }
+    ]
   },
-  "hot-honey-12oz-skep": {
-    id: "hot-honey-12oz-skep",
-    name: "She's a Hot Honey — 12 oz Skep Gift Jar",
-    price: 15,
-    image: "assets/img/products/hot-honey-12oz-skep.webp"
+  {
+    category: "Skincare",
+    note: "Small-batch skincare made with raw honey, beeswax, and botanicals. Returning favorites — new photos coming soon.",
+    products: [
+      {
+        id: "cocoa-butter-lotion",
+        name: "Cocoa Butter Lotion",
+        title: "Cocoa Butter Lotion",
+        price: 14.3,
+        image: PLACEHOLDER_IMG,
+        blurb: "Rich, silky cocoa butter lotion that drinks right into thirsty skin."
+      },
+      {
+        id: "honey-almond-lotion",
+        name: "Honey Almond Lotion",
+        title: "Honey Almond Lotion",
+        price: 14.3,
+        image: PLACEHOLDER_IMG,
+        blurb: "Everyday lotion with my raw honey and warm almond — light and lovely."
+      },
+      {
+        id: "tea-tree-vinegar-facial-toner",
+        name: "Tea Tree & Vinegar Facial Toner",
+        title: "Tea Tree & Vinegar Toner",
+        price: 17.6,
+        image: PLACEHOLDER_IMG,
+        blurb: "A bright, clarifying toner with tea tree and vinegar to reset your skin."
+      },
+      {
+        id: "rajeunir-body-mist",
+        name: "Rajeunir Body Mist",
+        title: "Rajeunir Body Mist",
+        price: 20.9,
+        image: PLACEHOLDER_IMG,
+        blurb: "A refreshing all-over mist that leaves skin soft and lightly scented."
+      },
+      {
+        id: "clearly-beeautiful",
+        name: "Clearly Beeautiful",
+        title: "Clearly Beeautiful",
+        price: 22,
+        image: PLACEHOLDER_IMG,
+        blurb: "My honey-powered clear-skin favorite — gentle enough for every day."
+      },
+      {
+        id: "honey-almond-cream",
+        name: "Honey Almond Cream",
+        title: "Honey Almond Cream",
+        price: 23.1,
+        image: PLACEHOLDER_IMG,
+        blurb: "A richer, deeper version of my honey almond moisture — for dry days."
+      },
+      {
+        id: "pumpkin-masque",
+        name: "Pumpkin Masque",
+        title: "Pumpkin Masque",
+        price: 24.2,
+        image: PLACEHOLDER_IMG,
+        blurb: "A cozy, enzyme-rich pumpkin masque that polishes while it pampers."
+      },
+      {
+        id: "wild-oats-honey-facial-cleanser",
+        name: "Wild Oats & Honey Facial Cleanser",
+        title: "Wild Oats & Honey Cleanser",
+        price: 26.4,
+        image: PLACEHOLDER_IMG,
+        blurb: "Mild and gentle daily cleanser with oats and raw honey — deep clean, soft finish."
+      },
+      {
+        id: "aha-mint-walnut-polish",
+        name: "AHA Mint Walnut Polish",
+        title: "AHA Mint Walnut Polish",
+        price: 30.8,
+        image: PLACEHOLDER_IMG,
+        blurb: "A tingly mint-walnut facial polish with natural AHAs for a fresh glow."
+      },
+      {
+        id: "supreme-facial-serum",
+        name: "Supreme Facial Serum with DMAE",
+        title: "Supreme Facial Serum",
+        price: 33,
+        image: PLACEHOLDER_IMG,
+        blurb: "My most-loved serum, with DMAE for firm, dewy, happy skin."
+      },
+      {
+        id: "vector-lift-creme",
+        name: "Vector Lift Creme",
+        title: "Vector Lift Creme",
+        price: 33,
+        image: PLACEHOLDER_IMG,
+        blurb: "A lifting, firming night creme for when your skin needs backup."
+      }
+    ]
   },
-  "hot-honey-1lb": {
-    id: "hot-honey-1lb",
-    name: "She's a Hot Honey — 1 lb Jar",
-    price: 16,
-    image: "assets/img/products/hot-honey-1lb.webp"
+  {
+    category: "The Wildcraft Farmacy",
+    note: "Small-batch creations from my garden, fields, and forest — gathered responsibly, made in harmony with nature. More wildcrafted goods are on the way.",
+    products: [
+      {
+        id: "herbal-spa-hair-body-wash",
+        name: "Herbal Spa Hair & Body Wash",
+        title: "Herbal Spa Hair & Body Wash",
+        price: 19.8,
+        image: PLACEHOLDER_IMG,
+        blurb: "One bottle, head to toe — an herbal wash that smells like a day at the spa."
+      }
+    ]
   },
-  "hot-honey-8oz": {
-    id: "hot-honey-8oz",
-    name: "She's a Hot Honey — 8 oz",
-    price: 10,
-    image: "assets/img/products/Cherry Bomb hot honey 8 oz.webp"
-  },
-  "hot-sauce-8oz": {
-    id: "hot-sauce-8oz",
-    name: "She's a Cherry Bomb — Hot Sauce, 8 oz",
-    price: 13,
-    image: "assets/img/products/hot-sauce-8oz-full.webp"
+  {
+    category: "Kits & Gift Sets",
+    products: [
+      {
+        id: "bath-body-essentials-kit",
+        name: "Bath & Body Essentials Kit",
+        title: "Bath & Body Essentials Kit",
+        price: 56.1,
+        image: "assets/img/products/originals/bath-and-body-essentials-kit.jpg",
+        blurb: "A full lineup of my bath & body favorites, bundled up and ready to gift."
+      },
+      {
+        id: "skin-care-starter-kit",
+        name: "Skin Care Essentials Starter Kit",
+        title: "Skin Care Starter Kit",
+        price: 68.2,
+        image: PLACEHOLDER_IMG,
+        blurb: "Everything you need to start a honey-powered skincare routine."
+      }
+    ]
   }
-};
+];
+
+const PRODUCTS = {};
+CATALOG.forEach((section) => {
+  section.products.forEach((product) => {
+    PRODUCTS[product.id] = product;
+  });
+});
+
+function escapeHtml(text) {
+  return String(text).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+}
+
+function renderCatalog() {
+  const root = document.getElementById("shop-catalog");
+  if (!root) {
+    return;
+  }
+
+  root.innerHTML = CATALOG.map((section) => `
+    <h3 class="shop-category-title">${escapeHtml(section.category)}</h3>
+    ${section.note ? `<p class="shop-category-lead">${escapeHtml(section.note)}</p>` : ""}
+    <div class="product-grid shop-grid">
+      ${section.products.map((product) => `
+        <article class="product-card">
+          <img class="shop-product-image" src="${product.image}" alt="${escapeHtml(product.name)}" loading="lazy" role="button" tabindex="0" data-product-id="${product.id}" data-price="${product.price.toFixed(2)}" data-name="${escapeHtml(product.name)}" />
+          <h3>${escapeHtml(product.title)}</h3>
+          <p>${escapeHtml(product.blurb)}</p>
+          <p class="shop-price">$${product.price.toFixed(2)}</p>
+          <button type="button" data-add-to-cart="${product.id}">Add to cart</button>
+        </article>
+      `).join("")}
+    </div>
+    ${section.footer ? `<p class="shop-category-note">${section.footer}</p>` : ""}
+  `).join("");
+}
 
 let lastFocusedImage = null;
 let modalState = {
@@ -152,9 +413,9 @@ function renderCart() {
 
       return `
         <article class="cart-item" data-cart-item="${product.id}">
-          <img class="cart-item__thumb" src="${product.image}" alt="${product.name}" loading="lazy" />
+          <img class="cart-item__thumb" src="${product.image}" alt="${escapeHtml(product.name)}" loading="lazy" />
           <div class="cart-item__details">
-            <h3>${product.name}</h3>
+            <h3>${escapeHtml(product.name)}</h3>
             <p>$${product.price.toFixed(2)}</p>
             <div class="cart-item__controls">
               <button type="button" data-qty-change="${product.id}" data-delta="-1" aria-label="Decrease quantity">−</button>
@@ -306,6 +567,7 @@ function bindEvents() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  renderCatalog();
   bindEvents();
   renderCart();
 });

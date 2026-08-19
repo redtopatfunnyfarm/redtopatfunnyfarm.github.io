@@ -6,7 +6,28 @@ const PRODUCTS = {
   "hot-honey-12oz-skep": { name: "She's a Hot Honey — 12 oz Skep Gift Jar", priceCents: 1500 },
   "hot-honey-1lb": { name: "She's a Hot Honey — 1 lb Jar", priceCents: 1600 },
   "hot-honey-8oz": { name: "She's a Hot Honey — 8 oz", priceCents: 1000 },
-  "hot-sauce-8oz": { name: "She's a Cherry Bomb — Hot Sauce, 8 oz", priceCents: 1300 }
+  "hot-sauce-8oz": { name: "She's a Cherry Bomb — Hot Sauce, 8 oz", priceCents: 1300 },
+  "bee-kissable": { name: "Bee Kissable — Lip Balm", priceCents: 330 },
+  "buzzed-bees": { name: "Buzzed Bees — Lip Balm", priceCents: 330 },
+  "lip-stuff-for-dudes": { name: "Lip Stuff for Dudes — Lip Balm", priceCents: 330 },
+  "sun-of-a-beech-balm": { name: "Sun of a Beech Balm — Lip Balm", priceCents: 440 },
+  "blizzard-bee-balm": { name: "Blizzard Bee Balm — Lip Balm", priceCents: 440 },
+  "bee-clear": { name: "Bee Clear — Blemish Stick", priceCents: 660 },
+  "bee-paws-paw-balm": { name: "Bee Paws — Paw Balm", priceCents: 1100 },
+  "cocoa-butter-lotion": { name: "Cocoa Butter Lotion", priceCents: 1430 },
+  "honey-almond-lotion": { name: "Honey Almond Lotion", priceCents: 1430 },
+  "tea-tree-vinegar-facial-toner": { name: "Tea Tree & Vinegar Facial Toner", priceCents: 1760 },
+  "rajeunir-body-mist": { name: "Rajeunir Body Mist", priceCents: 2090 },
+  "clearly-beeautiful": { name: "Clearly Beeautiful", priceCents: 2200 },
+  "honey-almond-cream": { name: "Honey Almond Cream", priceCents: 2310 },
+  "pumpkin-masque": { name: "Pumpkin Masque", priceCents: 2420 },
+  "wild-oats-honey-facial-cleanser": { name: "Wild Oats & Honey Facial Cleanser", priceCents: 2640 },
+  "aha-mint-walnut-polish": { name: "AHA Mint Walnut Polish", priceCents: 3080 },
+  "supreme-facial-serum": { name: "Supreme Facial Serum with DMAE", priceCents: 3300 },
+  "vector-lift-creme": { name: "Vector Lift Creme", priceCents: 3300 },
+  "herbal-spa-hair-body-wash": { name: "Herbal Spa Hair & Body Wash", priceCents: 1980 },
+  "bath-body-essentials-kit": { name: "Bath & Body Essentials Kit", priceCents: 5610 },
+  "skin-care-starter-kit": { name: "Skin Care Essentials Starter Kit", priceCents: 6820 }
 };
 
 const LOCATION_ID = "LG3N4XZKSD2YZ";
@@ -33,8 +54,8 @@ function validateCart(rawCart) {
     return { id, quantity, ...PRODUCTS[id] };
   });
 
-  if (!entries.length || entries.length > 20) {
-    throw new Error("Your cart must contain between 1 and 20 products.");
+  if (!entries.length || entries.length > 40) {
+    throw new Error("Your cart must contain between 1 and 40 products.");
   }
   return entries;
 }

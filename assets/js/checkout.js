@@ -4,47 +4,38 @@ const SQUARE_LOCATION_ID = "LG3N4XZKSD2YZ";
 const SHIPPING_CENTS = 700;
 const SANDBOX_TAX_RATE = 0.0875;
 
+const PLACEHOLDER_IMG = "assets/img/products/placeholder-coming-soon.png";
+
 const PRODUCTS = {
-  "raw-honey-8oz": {
-    name: "She's as Sweet as Can Bee — Raw Honey, 8 oz",
-    priceCents: 800,
-    image: "assets/img/products/raw-honey-8oz.webp"
-  },
-  "raw-honey-1lb": {
-    name: "She's as Sweet as Can Bee — Raw Honey, 1 lb",
-    priceCents: 1300,
-    image: "assets/img/products/raw-honey-1lb-wildflower.webp"
-  },
-  "raw-honey-2-5lb": {
-    name: "She's as Sweet as Can Bee — Raw Honey, 2.5 lb",
-    priceCents: 2700,
-    image: "assets/img/products/raw-honey-2-5lb-wildflower.png"
-  },
-  "raw-honey-5lb": {
-    name: "She's as Sweet as Can Bee — Raw Honey, 5 lb",
-    priceCents: 5200,
-    image: "assets/img/products/5 lb honey.webp"
-  },
-  "hot-honey-12oz-skep": {
-    name: "She's a Hot Honey — 12 oz Skep Gift Jar",
-    priceCents: 1500,
-    image: "assets/img/products/hot-honey-12oz-skep.webp"
-  },
-  "hot-honey-1lb": {
-    name: "She's a Hot Honey — 1 lb Jar",
-    priceCents: 1600,
-    image: "assets/img/products/hot-honey-1lb.webp"
-  },
-  "hot-honey-8oz": {
-    name: "She's a Hot Honey — 8 oz",
-    priceCents: 1000,
-    image: "assets/img/products/Cherry Bomb hot honey 8 oz.webp"
-  },
-  "hot-sauce-8oz": {
-    name: "She's a Cherry Bomb — Hot Sauce, 8 oz",
-    priceCents: 1300,
-    image: "assets/img/products/hot-sauce-8oz-full.webp"
-  }
+  "raw-honey-8oz": { name: "She's as Sweet as Can Bee — Raw Honey, 8 oz", priceCents: 800, image: "assets/img/products/raw-honey-8oz.webp" },
+  "raw-honey-1lb": { name: "She's as Sweet as Can Bee — Raw Honey, 1 lb", priceCents: 1300, image: "assets/img/products/raw-honey-1lb-wildflower.webp" },
+  "raw-honey-2-5lb": { name: "She's as Sweet as Can Bee — Raw Honey, 2.5 lb", priceCents: 2700, image: "assets/img/products/raw-honey-2-5lb-wildflower.png" },
+  "raw-honey-5lb": { name: "She's as Sweet as Can Bee — Raw Honey, 5 lb", priceCents: 5200, image: "assets/img/products/5 lb honey.webp" },
+  "hot-honey-12oz-skep": { name: "She's a Hot Honey — 12 oz Skep Gift Jar", priceCents: 1500, image: "assets/img/products/hot-honey-12oz-skep.webp" },
+  "hot-honey-1lb": { name: "She's a Hot Honey — 1 lb Jar", priceCents: 1600, image: "assets/img/products/hot-honey-1lb.webp" },
+  "hot-honey-8oz": { name: "She's a Hot Honey — 8 oz", priceCents: 1000, image: "assets/img/products/Cherry Bomb hot honey 8 oz.webp" },
+  "hot-sauce-8oz": { name: "She's a Cherry Bomb — Hot Sauce, 8 oz", priceCents: 1300, image: "assets/img/products/hot-sauce-8oz-full.webp" },
+  "bee-kissable": { name: "Bee Kissable — Lip Balm", priceCents: 330, image: PLACEHOLDER_IMG },
+  "buzzed-bees": { name: "Buzzed Bees — Lip Balm", priceCents: 330, image: PLACEHOLDER_IMG },
+  "lip-stuff-for-dudes": { name: "Lip Stuff for Dudes — Lip Balm", priceCents: 330, image: PLACEHOLDER_IMG },
+  "sun-of-a-beech-balm": { name: "Sun of a Beech Balm — Lip Balm", priceCents: 440, image: PLACEHOLDER_IMG },
+  "blizzard-bee-balm": { name: "Blizzard Bee Balm — Lip Balm", priceCents: 440, image: PLACEHOLDER_IMG },
+  "bee-clear": { name: "Bee Clear — Blemish Stick", priceCents: 660, image: PLACEHOLDER_IMG },
+  "bee-paws-paw-balm": { name: "Bee Paws — Paw Balm", priceCents: 1100, image: PLACEHOLDER_IMG },
+  "cocoa-butter-lotion": { name: "Cocoa Butter Lotion", priceCents: 1430, image: PLACEHOLDER_IMG },
+  "honey-almond-lotion": { name: "Honey Almond Lotion", priceCents: 1430, image: PLACEHOLDER_IMG },
+  "tea-tree-vinegar-facial-toner": { name: "Tea Tree & Vinegar Facial Toner", priceCents: 1760, image: PLACEHOLDER_IMG },
+  "rajeunir-body-mist": { name: "Rajeunir Body Mist", priceCents: 2090, image: PLACEHOLDER_IMG },
+  "clearly-beeautiful": { name: "Clearly Beeautiful", priceCents: 2200, image: PLACEHOLDER_IMG },
+  "honey-almond-cream": { name: "Honey Almond Cream", priceCents: 2310, image: PLACEHOLDER_IMG },
+  "pumpkin-masque": { name: "Pumpkin Masque", priceCents: 2420, image: PLACEHOLDER_IMG },
+  "wild-oats-honey-facial-cleanser": { name: "Wild Oats & Honey Facial Cleanser", priceCents: 2640, image: PLACEHOLDER_IMG },
+  "aha-mint-walnut-polish": { name: "AHA Mint Walnut Polish", priceCents: 3080, image: PLACEHOLDER_IMG },
+  "supreme-facial-serum": { name: "Supreme Facial Serum with DMAE", priceCents: 3300, image: PLACEHOLDER_IMG },
+  "vector-lift-creme": { name: "Vector Lift Creme", priceCents: 3300, image: PLACEHOLDER_IMG },
+  "herbal-spa-hair-body-wash": { name: "Herbal Spa Hair & Body Wash", priceCents: 1980, image: PLACEHOLDER_IMG },
+  "bath-body-essentials-kit": { name: "Bath & Body Essentials Kit", priceCents: 5610, image: "assets/img/products/originals/bath-and-body-essentials-kit.jpg" },
+  "skin-care-starter-kit": { name: "Skin Care Essentials Starter Kit", priceCents: 6820, image: PLACEHOLDER_IMG }
 };
 
 function money(cents) {
