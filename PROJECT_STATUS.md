@@ -43,7 +43,14 @@ Last updated: August 18, 2026
 4. Confirm the order in Square's sandbox dashboard.
 5. For production: swap application/location IDs, use `SQUARE_ACCESS_TOKEN` (production) in
    the function, real tax setup, and Tammi's sign-off.
-6. Point shopatfunnyfarm.com DNS (GoDaddy) at the site.
+6. ~~Point shopatfunnyfarm.com DNS (GoDaddy) at the site~~ DONE 2026-08-18:
+   - GoDaddy DNS (kept at GoDaddy — nameservers NOT moved, email records untouched):
+     `www` CNAME → `redtopatfunnyfarm.pages.dev`; apex → 301 forward to
+     `https://www.shopatfunnyfarm.com` (GoDaddy auto-SSL on the redirect, takes a few hours).
+   - Cloudflare Pages: `www.shopatfunnyfarm.com` added as custom domain via CNAME setup;
+     activates automatically once Cloudflare's checker sees the record.
+   - ⚠ Domain auto-renew is OFF at GoDaddy (expires Nov 21, 2026) — Tammi should enable it.
+   - Domain lives in Tammi's GoDaddy account (login is hers; sessions expire fast).
 
 ## Business goal
 
