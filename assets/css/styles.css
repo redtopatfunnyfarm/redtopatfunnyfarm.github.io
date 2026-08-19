@@ -1046,6 +1046,10 @@ body.lightbox-open {
   color: var(--ff-ink);
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .harvest-ribbon {
   background: linear-gradient(90deg, var(--ff-amber-deep), var(--ff-amber-light));
   color: var(--ff-cream-soft);
