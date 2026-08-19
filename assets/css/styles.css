@@ -1046,6 +1046,32 @@ body.lightbox-open {
   color: var(--ff-ink);
 }
 
+.harvest-ribbon {
+  background: linear-gradient(90deg, var(--ff-amber-deep), var(--ff-amber-light));
+  color: var(--ff-cream-soft);
+  padding: var(--space-3) 0;
+  text-align: center;
+  font-size: 0.98rem;
+  box-shadow: 0 6px 18px rgba(59, 36, 8, 0.22);
+}
+
+.harvest-ribbon strong {
+  color: var(--ff-golden-text);
+}
+
+.coming-soon-chip {
+  display: inline-block;
+  margin-top: auto;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 999px;
+  background: rgba(255, 230, 163, 0.55);
+  border: 1px dashed var(--ff-amber-mid);
+  color: var(--ff-ink);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
 .shop-category-title {
   margin: var(--space-6) 0 var(--space-4);
   padding-bottom: var(--space-2);

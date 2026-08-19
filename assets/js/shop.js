@@ -312,11 +312,18 @@ function escapeHtml(text) {
   return String(text).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
 }
 
+const SHOP_OPEN = window.FF_SHOP_OPEN !== false;
+
 function renderCatalog() {
   const root = document.getElementById("shop-catalog");
   if (!root) {
     return;
   }
+
+  const buyBlock = (product) => SHOP_OPEN
+    ? `<p class="shop-price">$${product.price.toFixed(2)}</p>
+       <button type="button" data-add-to-cart="${product.id}">Add to cart</button>`
+    : `<p class="coming-soon-chip">Coming after harvest 🍯</p>`;
 
   root.innerHTML = CATALOG.map((section) => `
     <h3 class="shop-category-title">${escapeHtml(section.category)}</h3>
@@ -327,12 +334,11 @@ function renderCatalog() {
           <img class="shop-product-image" src="${product.image}" alt="${escapeHtml(product.name)}" loading="lazy" role="button" tabindex="0" data-product-id="${product.id}" data-price="${product.price.toFixed(2)}" data-name="${escapeHtml(product.name)}" />
           <h3>${escapeHtml(product.title)}</h3>
           <p>${escapeHtml(product.blurb)}</p>
-          <p class="shop-price">$${product.price.toFixed(2)}</p>
-          <button type="button" data-add-to-cart="${product.id}">Add to cart</button>
+          ${buyBlock(product)}
         </article>
       `).join("")}
     </div>
-    ${section.footer ? `<p class="shop-category-note">${section.footer}</p>` : ""}
+    ${section.footer && SHOP_OPEN ? `<p class="shop-category-note">${section.footer}</p>` : ""}
   `).join("");
 }
 
@@ -491,7 +497,8 @@ function openImageModal({ src, alt, productId, price }) {
 
   modalImg.src = src;
   modalImg.alt = alt;
-  modalPrice.textContent = `$${Number(price).toFixed(2)}`;
+  modalPrice.textContent = SHOP_OPEN ? `$${Number(price).toFixed(2)}` : "Coming after harvest 🍯";
+  document.getElementById("image-modal-add").hidden = !SHOP_OPEN;
 
   modalState = {
     productId,
@@ -592,6 +599,38 @@ function bindEvents() {
 
 window.addEventListener("DOMContentLoaded", () => {
   renderCatalog();
+
+  if (!SHOP_OPEN) {
+    // Harvest mode: preview only — no cart, no checkout entry points.
+    const cartButton = document.getElementById("open-cart-button");
+    if (cartButton) cartButton.hidden = true;
+
+    document.querySelectorAll(".shop-product-image[role='button']").forEach((image) => {
+      const openFromImage = () => {
+        lastFocusedImage = image;
+        openImageModal({
+          src: image.currentSrc || image.src,
+          alt: image.dataset.name || image.alt,
+          productId: image.dataset.productId,
+          price: image.dataset.price || 0
+        });
+      };
+      image.addEventListener("click", openFromImage);
+      image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openFromImage();
+        }
+      });
+    });
+    document.getElementById("image-modal-overlay").addEventListener("click", closeImageModal);
+    document.getElementById("image-modal-close").addEventListener("click", closeImageModal);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeImageModal();
+    });
+    return;
+  }
+
   bindEvents();
   renderCart();
 });

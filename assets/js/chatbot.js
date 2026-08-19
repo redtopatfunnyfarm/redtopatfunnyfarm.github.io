@@ -123,8 +123,21 @@
     }
   ];
 
-  const fallbackAnswer =
-    'I can help! Try asking about ordering, shipping, pickup, lip balm, raw honey, or crystallization. Or text/call (716) 783-0857. You can also visit the FAQ page.';
+  // Harvest-season mode: pause every "order now" invitation.
+  if (window.FF_SHOP_OPEN === false) {
+    const harvest =
+      'It\'s harvest season! 🍯 The bees and I are bringing in this year\'s honey, so ordering is paused for a short while. The online shop opens right after harvest — join the honey list on the home page and you\'ll be the first to know.';
+    const pauseKeywords = ['how do i order', 'order', 'buy', 'purchase', 'checkout', 'deliver', 'delivery', 'ship', 'shipping', 'online checkout', 'where do i pick up', 'pickup location', 'pick up', 'meetup', 'payment', 'pay', 'cash', 'venmo', 'card', 'zelle', 'how much can i order', 'minimum order', 'quantities', 'quantity', 'bulk', 'gallon'];
+    canonicalAnswers.forEach((entry) => {
+      if (entry.keywords.some((k) => pauseKeywords.includes(k))) {
+        entry.answer = harvest;
+      }
+    });
+  }
+
+  const fallbackAnswer = window.FF_SHOP_OPEN === false
+    ? 'I can help! Quick heads-up: it\'s harvest season, so the shop opens a little later. Ask me about raw honey, storage, crystallization — or join the honey list on the home page to hear the moment it\'s ready.'
+    : 'I can help! Try asking about ordering, shipping, pickup, lip balm, raw honey, or crystallization. Or text/call (716) 783-0857. You can also visit the FAQ page.';
 
   function normalize(text) {
     return text.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();

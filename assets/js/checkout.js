@@ -132,6 +132,10 @@ function friendlyPaymentError(error, response) {
 }
 
 async function initializeCheckout() {
+  if (window.FF_SHOP_OPEN === false) {
+    window.location.replace("shop.html");
+    return;
+  }
   let cart = getCart();
   const message = document.getElementById("checkout-message");
   const payButton = document.getElementById("pay-button");
