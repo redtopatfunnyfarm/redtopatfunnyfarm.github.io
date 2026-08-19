@@ -86,14 +86,14 @@ const CATALOG = [
   },
   {
     category: "Lip Balms & Body Balms",
-    note: "My original handmade balms are back — made with beeswax, raw honey, almond oil, and cocoa butter from my own recipes. Pictured together; individual photos coming as each batch is poured.",
+    note: "My original handmade balms are back — made with beeswax, raw honey, almond oil, and cocoa butter from my own recipes. Fresh batch photos coming as each flavor is poured.",
     products: [
       {
         id: "bee-kissable",
         name: "Bee Kissable — Lip Balm",
         title: "Bee Kissable",
         price: 3.3,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/balm-bee-kissable.jpg",
         blurb: "My classic beeswax lip balm in flavors like Tahitian Beenilla — kissably soft."
       },
       {
@@ -101,7 +101,7 @@ const CATALOG = [
         name: "Buzzed Bees — Lip Balm",
         title: "Buzzed Bees",
         price: 3.3,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/balm-buzzed-bees.jpg",
         blurb: "A fun, flavored beeswax lip balm with a little extra buzz."
       },
       {
@@ -109,7 +109,7 @@ const CATALOG = [
         name: "Lip Stuff for Dudes — Lip Balm",
         title: "Lip Stuff for Dudes",
         price: 3.3,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/balm-lip-stuff-for-dudes.jpg",
         blurb: "No-nonsense beeswax and honey lip balm. For dudes. And everyone else."
       },
       {
@@ -117,7 +117,7 @@ const CATALOG = [
         name: "Sun of a Beech Balm — Lip Balm",
         title: "Sun of a Beech Balm",
         price: 4.4,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/balm-sun-of-a-beech-balm.jpg",
         blurb: "Beeswax lip balm made for sunny days outside on the farm."
       },
       {
@@ -125,7 +125,7 @@ const CATALOG = [
         name: "Blizzard Bee Balm — Lip Balm",
         title: "Blizzard Bee Balm",
         price: 4.4,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/balm-blizzard-bee-balm.jpg",
         blurb: "Winter-strength balm for wind-chapped lips — made for WNY winters."
       },
       {
@@ -133,7 +133,7 @@ const CATALOG = [
         name: "Bee Clear — Blemish Stick",
         title: "Bee Clear Blemish Stick",
         price: 6.6,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/mock-bee-clear.jpg",
         blurb: "My beeswax blemish stick — great on pimples, bug bites, and bee stings."
       },
       {
@@ -141,7 +141,7 @@ const CATALOG = [
         name: "Bee Paws — Paw Balm",
         title: "Bee Paws Paw Balm",
         price: 11,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/mock-bee-paws-paw-balm.jpg",
         blurb: "Gentle beeswax balm for your pup's dry, cracked paws — farm-tested."
       },
       {
@@ -149,7 +149,7 @@ const CATALOG = [
         name: "Bombshell — Lip Stuff for Dudes",
         title: "Bombshell",
         price: 3.3,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/balm-bombshell-lip-balm.jpg",
         blurb: "The black cherry bombshell of my Lip Stuff for Dudes line."
       },
       {
@@ -157,7 +157,7 @@ const CATALOG = [
         name: "Bourbon Buzz — Lip Stuff for Dudes",
         title: "Bourbon Buzz",
         price: 3.3,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/balm-bourbon-buzz-lip-balm.jpg",
         blurb: "Beeswax, honey, and a warm bourbon flavor — no ID required."
       },
       {
@@ -165,21 +165,21 @@ const CATALOG = [
         name: "Barrel of Rum & Coke — Lip Stuff for Dudes",
         title: "Barrel of Rum & Coke",
         price: 3.3,
-        image: "assets/img/products/lip-balm-collection.jpg",
+        image: "assets/img/products/balm-barrel-of-rum-coke-lip-balm.jpg",
         blurb: "Rum-and-coke flavored beeswax balm from my Lip Stuff for Dudes line."
       }
     ]
   },
   {
     category: "Skincare",
-    note: "Small-batch skincare made with raw honey, beeswax, and botanicals. Returning favorites — new photos coming soon.",
+    note: "Small-batch skincare made with raw honey, beeswax, and botanicals. Returning favorites — images below are concept mockups until each batch is photographed.",
     products: [
       {
         id: "cocoa-butter-lotion",
         name: "Cocoa Butter Lotion",
         title: "Cocoa Butter Lotion",
         price: 14.3,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-cocoa-butter-lotion.jpg",
         blurb: "Rich, silky cocoa butter lotion that drinks right into thirsty skin."
       },
       {
@@ -187,7 +187,7 @@ const CATALOG = [
         name: "Honey Almond Lotion",
         title: "Honey Almond Lotion",
         price: 14.3,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-honey-almond-lotion.jpg",
         blurb: "Everyday lotion with my raw honey and warm almond — light and lovely."
       },
       {
@@ -195,7 +195,7 @@ const CATALOG = [
         name: "Tea Tree & Vinegar Facial Toner",
         title: "Tea Tree & Vinegar Toner",
         price: 17.6,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-tea-tree-vinegar-facial-toner.jpg",
         blurb: "A bright, clarifying toner with tea tree and vinegar to reset your skin."
       },
       {
@@ -203,7 +203,7 @@ const CATALOG = [
         name: "Rajeunir Body Mist",
         title: "Rajeunir Body Mist",
         price: 20.9,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-rajeunir-body-mist.jpg",
         blurb: "A refreshing all-over mist that leaves skin soft and lightly scented."
       },
       {
@@ -211,7 +211,7 @@ const CATALOG = [
         name: "Clearly Beeautiful",
         title: "Clearly Beeautiful",
         price: 22,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-clearly-beeautiful.jpg",
         blurb: "My honey-powered clear-skin favorite — gentle enough for every day."
       },
       {
@@ -219,7 +219,7 @@ const CATALOG = [
         name: "Honey Almond Cream",
         title: "Honey Almond Cream",
         price: 23.1,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-honey-almond-cream.jpg",
         blurb: "A richer, deeper version of my honey almond moisture — for dry days."
       },
       {
@@ -227,7 +227,7 @@ const CATALOG = [
         name: "Pumpkin Masque",
         title: "Pumpkin Masque",
         price: 24.2,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-pumpkin-masque.jpg",
         blurb: "A cozy, enzyme-rich pumpkin masque that polishes while it pampers."
       },
       {
@@ -235,7 +235,7 @@ const CATALOG = [
         name: "Wild Oats & Honey Facial Cleanser",
         title: "Wild Oats & Honey Cleanser",
         price: 26.4,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-wild-oats-honey-facial-cleanser.jpg",
         blurb: "Mild and gentle daily cleanser with oats and raw honey — deep clean, soft finish."
       },
       {
@@ -243,7 +243,7 @@ const CATALOG = [
         name: "AHA Mint Walnut Polish",
         title: "AHA Mint Walnut Polish",
         price: 30.8,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-aha-mint-walnut-polish.jpg",
         blurb: "A tingly mint-walnut facial polish with natural AHAs for a fresh glow."
       },
       {
@@ -251,7 +251,7 @@ const CATALOG = [
         name: "Supreme Facial Serum with DMAE",
         title: "Supreme Facial Serum",
         price: 33,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-supreme-facial-serum.jpg",
         blurb: "My most-loved serum, with DMAE for firm, dewy, happy skin."
       },
       {
@@ -259,7 +259,7 @@ const CATALOG = [
         name: "Vector Lift Creme",
         title: "Vector Lift Creme",
         price: 33,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-vector-lift-creme.jpg",
         blurb: "A lifting, firming night creme for when your skin needs backup."
       }
     ]
@@ -273,7 +273,7 @@ const CATALOG = [
         name: "Herbal Spa Hair & Body Wash",
         title: "Herbal Spa Hair & Body Wash",
         price: 19.8,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-herbal-spa-hair-body-wash.jpg",
         blurb: "One bottle, head to toe — an herbal wash that smells like a day at the spa."
       }
     ]
@@ -294,7 +294,7 @@ const CATALOG = [
         name: "Skin Care Essentials Starter Kit",
         title: "Skin Care Starter Kit",
         price: 68.2,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/mock-skin-care-starter-kit.jpg",
         blurb: "Everything you need to start a honey-powered skincare routine."
       }
     ]
