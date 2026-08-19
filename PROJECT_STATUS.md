@@ -1,6 +1,27 @@
 # Project Status and Recovery Notes
 
-Last updated: August 18, 2026
+Last updated: August 18, 2026 (evening — full audit pass)
+
+## August 18 evening — catalog, images, mobile, domain COMPLETE
+
+- **Catalog: 32 products / 7 categories**, rendered dynamically from `assets/js/shop.js`.
+  Original lip balm + skincare lines recovered from the Wayback Machine archive of her old
+  site and her Facebook history (see CATALOG-MASTER.md); those prices are 2019 +10%
+  placeholders pending Tammi. Three lip balm flavors discovered from a 2018 photo:
+  Bombshell (black cherry), Bourbon Buzz, Barrel of Rum & Coke.
+- **Every product has an image**: real photos, individual tube crops (`balm-*.jpg`) from
+  the 2018 line photo, or branded concept mockups (`mock-*.jpg`) stamped "Concept image —
+  real photo coming soon". Real skincare photos still wanted from Tammi.
+- **Mobile optimized**: chatbot = tap-to-open mascot bubble (was covering phone screens;
+  storage keys bumped to v2 to override stale visitor state), 2-col phone grid, 40px+ tap
+  targets, all pages audited for overflow. Assets cache-busted (`?v=` — bump on changes).
+- **Domain fully live**: https://www.shopatfunnyfarm.com serves the site + payment API;
+  https and http apex both 301 to www (GoDaddy forwarding cert provisioned).
+- **Chatbot answers updated** to match the live store (checkout exists, $7 shipping, free
+  Depew / Corfu-Darien pickup, retail stores, lip balm line, real product names).
+- Full regression this evening: all 8 pages 200 on the domain, no broken refs/images,
+  meta tags present, live sandbox order with 5 mixed old+new products succeeded
+  (order e0sj0EG1iHW7vdCoPD0u1iWJSgCZY).
 
 ## August 18, 2026 update
 
