@@ -86,22 +86,22 @@ const CATALOG = [
   },
   {
     category: "Lip Balms & Body Balms",
-    note: "My original handmade balms are back — made with beeswax and honey from my own hives. New photos coming as each batch is poured.",
+    note: "My original handmade balms are back — made with beeswax, raw honey, almond oil, and cocoa butter from my own recipes. Pictured together; individual photos coming as each batch is poured.",
     products: [
       {
         id: "bee-kissable",
         name: "Bee Kissable — Lip Balm",
         title: "Bee Kissable",
         price: 3.3,
-        image: PLACEHOLDER_IMG,
-        blurb: "My classic beeswax lip balm — smooth, simple, and kissably soft."
+        image: "assets/img/products/lip-balm-collection.jpg",
+        blurb: "My classic beeswax lip balm in flavors like Tahitian Beenilla — kissably soft."
       },
       {
         id: "buzzed-bees",
         name: "Buzzed Bees — Lip Balm",
         title: "Buzzed Bees",
         price: 3.3,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/lip-balm-collection.jpg",
         blurb: "A fun, flavored beeswax lip balm with a little extra buzz."
       },
       {
@@ -109,7 +109,7 @@ const CATALOG = [
         name: "Lip Stuff for Dudes — Lip Balm",
         title: "Lip Stuff for Dudes",
         price: 3.3,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/lip-balm-collection.jpg",
         blurb: "No-nonsense beeswax and honey lip balm. For dudes. And everyone else."
       },
       {
@@ -117,7 +117,7 @@ const CATALOG = [
         name: "Sun of a Beech Balm — Lip Balm",
         title: "Sun of a Beech Balm",
         price: 4.4,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/lip-balm-collection.jpg",
         blurb: "Beeswax lip balm made for sunny days outside on the farm."
       },
       {
@@ -125,7 +125,7 @@ const CATALOG = [
         name: "Blizzard Bee Balm — Lip Balm",
         title: "Blizzard Bee Balm",
         price: 4.4,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/lip-balm-collection.jpg",
         blurb: "Winter-strength balm for wind-chapped lips — made for WNY winters."
       },
       {
@@ -133,7 +133,7 @@ const CATALOG = [
         name: "Bee Clear — Blemish Stick",
         title: "Bee Clear Blemish Stick",
         price: 6.6,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/lip-balm-collection.jpg",
         blurb: "My beeswax blemish stick — great on pimples, bug bites, and bee stings."
       },
       {
@@ -141,8 +141,32 @@ const CATALOG = [
         name: "Bee Paws — Paw Balm",
         title: "Bee Paws Paw Balm",
         price: 11,
-        image: PLACEHOLDER_IMG,
+        image: "assets/img/products/lip-balm-collection.jpg",
         blurb: "Gentle beeswax balm for your pup's dry, cracked paws — farm-tested."
+      },
+      {
+        id: "bombshell-lip-balm",
+        name: "Bombshell — Lip Stuff for Dudes",
+        title: "Bombshell",
+        price: 3.3,
+        image: "assets/img/products/lip-balm-collection.jpg",
+        blurb: "The black cherry bombshell of my Lip Stuff for Dudes line."
+      },
+      {
+        id: "bourbon-buzz-lip-balm",
+        name: "Bourbon Buzz — Lip Stuff for Dudes",
+        title: "Bourbon Buzz",
+        price: 3.3,
+        image: "assets/img/products/lip-balm-collection.jpg",
+        blurb: "Beeswax, honey, and a warm bourbon flavor — no ID required."
+      },
+      {
+        id: "barrel-of-rum-coke-lip-balm",
+        name: "Barrel of Rum & Coke — Lip Stuff for Dudes",
+        title: "Barrel of Rum & Coke",
+        price: 3.3,
+        image: "assets/img/products/lip-balm-collection.jpg",
+        blurb: "Rum-and-coke flavored beeswax balm from my Lip Stuff for Dudes line."
       }
     ]
   },
