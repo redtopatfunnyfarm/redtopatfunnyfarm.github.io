@@ -19,28 +19,38 @@
   const canonicalAnswers = [
     {
       answer:
-        'Text/call (716) 783-0857 or email RedTopAtFunnyFarm@gmail.com. I\'ll confirm what\'s available and set up local pickup.',
-      keywords: ['how do i order', 'order', 'buy', 'purchase']
+        'You can order right here — add your favorites to the cart on the Shop page and check out securely with a card. Prefer to order directly? Text/call (716) 783-0857 or email RedTopAtFunnyFarm@gmail.com.',
+      keywords: ['how do i order', 'order', 'buy', 'purchase', 'checkout']
     },
     {
       answer:
-        'Right now I\'m set up for local pickup/meetups in Western NY. Shipping/online checkout is coming later.',
+        'Yes — I ship! Flat-rate shipping is $7.00 per order. Local pickup in the Depew or Corfu/Darien area is always free; just message me to arrange it.',
       keywords: ['deliver', 'delivery', 'ship', 'shipping', 'online checkout']
     },
     {
       answer:
-        'I\'m in the Batavia/Corfu/Western NY area. After you order, I\'ll confirm a simple meetup spot + time.',
+        'Free local pickup is available around Depew and Corfu/Darien in Western NY. After you order, message me and we\'ll set a simple spot + time.',
       keywords: ['where do i pick up', 'pickup location', 'pick up', 'meetup']
     },
     {
       answer:
-        'As much as I have in stock! Small-batch harvests vary, so I\'ll confirm quantities when you reach out.',
-      keywords: ['how much can i order', 'minimum order', 'maximum order', 'quantities', 'quantity']
+        'As much as I have in stock! Small-batch harvests vary. For 1 gallon, 5 gallons, or bigger honey orders, message me directly for pricing.',
+      keywords: ['how much can i order', 'minimum order', 'maximum order', 'quantities', 'quantity', 'bulk', 'gallon']
     },
     {
       answer:
-        'For now, we\'ll confirm payment options when you order (cash + popular mobile options). Online checkout coming soon.',
+        'Online orders take cards through Square\'s secure checkout. For local pickup, cash and popular mobile options work too.',
       keywords: ['payment', 'pay', 'cash', 'venmo', 'card', 'zelle']
+    },
+    {
+      answer:
+        'My honey is also at a few local shops — Depew Deli, Elador Rose Boutique, Marlene & Phil\'s, Nana\'s Mediterranean in Alden, and more. See the Locations page for the full list.',
+      keywords: ['store', 'stores', 'where to buy', 'locations', 'shops', 'retail']
+    },
+    {
+      answer:
+        'Yes! My original handmade lip balms are back — Bee Kissable, Buzzed Bees, Lip Stuff for Dudes, and more — plus skincare returning soon. Check the Shop page.',
+      keywords: ['lip balm', 'lip stuff', 'balm', 'chapstick', 'skincare', 'lotion', 'skin care']
     },
     {
       answer:
@@ -103,18 +113,18 @@
     },
     {
       answer:
-        'I do seasonal infused options and farm-crafted heat. Check the Shop page or ask what\'s in stock.',
+        '"She\'s a Hot Honey" is my raw honey blended with homegrown cherry bomb peppers — in 8 oz, 1 lb, and a 12 oz beehive gift jar. It\'s on the Shop page!',
       keywords: ['hot honey', 'infused', 'spicy honey']
     },
     {
       answer:
-        'Cherry Bomb is a farm-to-bottle hot sauce. Text/call/email and I\'ll tell you what batch is ready.',
-      keywords: ['cherry bomb', 'hot sauce details', 'sauce details']
+        '"She\'s a Cherry Bomb" is my farm-to-bottle hot sauce — smooth, medium heat that builds. Grab the 8 oz bottle on the Shop page.',
+      keywords: ['cherry bomb', 'hot sauce', 'sauce details']
     }
   ];
 
   const fallbackAnswer =
-    'I can help! Try asking about ordering, pickup, raw honey, or crystallization. Or text/call (716) 783-0857. You can also visit the FAQ page.';
+    'I can help! Try asking about ordering, shipping, pickup, lip balm, raw honey, or crystallization. Or text/call (716) 783-0857. You can also visit the FAQ page.';
 
   function normalize(text) {
     return text.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
