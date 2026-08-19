@@ -1,7 +1,7 @@
 (function () {
   const STORAGE_HISTORY_KEY = 'redTopChatHistory';
-  const STORAGE_MIN_KEY = 'redTopChatMinimized';
-  const STORAGE_EXPANDED_KEY = 'redTopChatExpanded';
+  const STORAGE_MIN_KEY = 'redTopChatMinimized_v2';
+  const STORAGE_EXPANDED_KEY = 'redTopChatExpanded_v2';
 
   const chatbotWrap = document.querySelector('.chatbot-wrap');
   if (!chatbotWrap) return;
@@ -180,7 +180,7 @@
     localStorage.setItem(STORAGE_MIN_KEY, minimized ? '1' : '0');
 
     if (!minimized) {
-      setExpandedState(localStorage.getItem(STORAGE_EXPANDED_KEY) === '1');
+      setExpandedState(localStorage.getItem(STORAGE_EXPANDED_KEY) !== '0');
     }
   }
 
@@ -195,8 +195,9 @@
     );
   }
 
-  const isMinimized = localStorage.getItem(STORAGE_MIN_KEY) === '1';
-  const isExpanded = localStorage.getItem(STORAGE_EXPANDED_KEY) === '1';
+  // Default to the small mascot bubble until the visitor opens the chat.
+  const isMinimized = localStorage.getItem(STORAGE_MIN_KEY) !== '0';
+  const isExpanded = localStorage.getItem(STORAGE_EXPANDED_KEY) !== '0';
 
   setExpandedState(isExpanded);
   setMinimizedState(isMinimized);
@@ -230,6 +231,12 @@
 
   input.addEventListener('focus', expandFromInteraction);
   input.addEventListener('click', expandFromInteraction);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && !chatbotWrap.classList.contains('is-minimized')) {
+      setMinimizedState(true);
+    }
+  });
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();

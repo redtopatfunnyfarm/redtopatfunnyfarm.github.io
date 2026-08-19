@@ -855,9 +855,36 @@ body.lightbox-open {
   width: min(340px, calc(100vw - 2 * var(--space-4)));
 }
 
-.chatbot-wrap.is-minimized .chatbot-toggle {
-  margin-bottom: 0;
+.chatbot-wrap.is-minimized {
+  width: auto;
 }
+
+.chatbot-wrap.is-minimized .chatbot-toggle {
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  border: 2px solid var(--honey-amber);
+  background: var(--honey-cream) url("../img/mascot/bee-woman-chatbot.png") center 20% / 150% auto no-repeat;
+  box-shadow: 0 10px 26px rgba(59, 36, 8, 0.32);
+  overflow: hidden;
+  animation: bee-float 3.6s ease-in-out infinite;
+}
+
+.chatbot-wrap.is-minimized .chatbot-toggle span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.chatbot-wrap:not(.is-minimized) .chatbot-toggle span::after {
+  content: " ✕";
+}
+
 
 @keyframes bee-float {
   0%,
@@ -920,22 +947,35 @@ body.lightbox-open {
 
 @media (max-width: 720px) {
   main {
-    padding-bottom: 170px;
+    padding-bottom: 100px;
   }
 
   .chatbot-wrap {
     right: var(--space-3);
-    left: var(--space-3);
-    width: auto;
     bottom: var(--space-3);
+    width: auto;
+  }
+
+  .chatbot-wrap:not(.is-minimized) {
+    left: var(--space-3);
   }
 
   .chatbot-wrap.is-compact {
     width: min(240px, calc(100vw - 2 * var(--space-3)));
+    left: auto;
+  }
+
+  .chatbot-mascot img {
+    max-width: 96px;
   }
 
   .chatbot-messages {
-    max-height: 180px;
+    max-height: 38vh;
+  }
+
+  .chatbot-wrap.is-minimized .chatbot-toggle {
+    width: 64px;
+    height: 64px;
   }
 }
 
@@ -1228,6 +1268,41 @@ button.cart-remove {
 
   .cart-drawer {
     width: 100%;
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+
+  .shop-grid .product-card {
+    padding: var(--space-3);
+  }
+
+  .shop-grid .product-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .shop-grid .product-card p {
+    font-size: 0.8rem;
+  }
+
+  .shop-grid .product-card .shop-price {
+    font-size: 0.95rem;
+  }
+
+  .shop-grid .product-card button[data-add-to-cart] {
+    padding: var(--space-2) var(--space-2);
+    font-size: 0.85rem;
+    min-height: 42px;
+  }
+
+  .cart-item__controls button,
+  .checkout-line-item__controls button,
+  .chatbot-min,
+  .cart-close {
+    min-width: 40px;
+    min-height: 36px;
   }
 }
 
